@@ -33,7 +33,7 @@ const memberList = [
   { id: "m3", src: "", name: "윤예경", major: "생명공학과" },
   {
     id: "m4",
-    src: process.env.REACT_APP_KAYE_IMAGE,
+    src: "REDACTED-UUID",
     name: "권기영",
     major: "컴퓨터공학과",
   },

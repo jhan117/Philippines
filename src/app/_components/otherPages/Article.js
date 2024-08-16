@@ -1,3 +1,11 @@
+import img1 from "../../../../public/img1.png";
+import img2 from "../../../../public/img2.png";
+import img3 from "../../../../public/img3.png";
+import img4 from "../../../../public/img4.png";
+import img5 from "../../../../public/img5.png";
+import img6 from "../../../../public/img6.png";
+import Image from "next/image";
+
 import classes from "./Article.module.css";
 
 const page = () => {
@@ -13,14 +21,14 @@ const page = () => {
         개선에 힘을 써 6개월 후 다시 방문객을 받았습니다.
       </section>
       <section className={classes.main}>
-        <img src="/img1.png" alt="통계" />
+        <Image src={img1} alt="통계" />
         <p>
           농업활동 및 빠른 도시화로 수질의 오염물 질을 33개의 매개 변수로 분류할
           수 있으며 농업가축(29%), 공업(27%), 농업(8.14%) 순으 로 수질 오염의
           원인을 나열할 수 있습니다. 이 외 도시하수, 산업폐수, 도시 하수관거의
           불량도 원인입니다.
         </p>
-        <img src="/img2.png" alt="통계" />
+        <Image src={img2} alt="통계" />
         <p>
           수질의 모니터링은 TDS, coliform(E.coli), BOD, DO 등이 중요해 오염도,
           수질 상태를 알아볼 수 있습니다. 필리핀은 많은 섬으로 이루어진
@@ -29,7 +37,7 @@ const page = () => {
           폐기물의 1/3(33%)는 마닐라 지역에서 배출되고 IV지 역에서는 약 15%의
           배출됩니다.
         </p>
-        <img src="/img3.png" alt="통계" />
+        <Image src={img3} alt="통계" />
         <p>
           지역별로 나누어 수질의 TDS와 coliform(E.coli) 측정해보니 TDS 측정에
           통과한 지역은 IX, IV, III, NCR이며 coliform(E.coli) 측정에 통과한
@@ -38,7 +46,7 @@ const page = () => {
           높습니다.
         </p>
         <p>* TDS : 이온 총량 측정기, coliform(E.coli) : 대장균 </p>
-        <img src="/img4.png" alt="통계" />
+        <Image src={img4} alt="통계" />
         <p>
           전체적인 수질을 지역별로 나누어 측정해 본 결과로 지역 XII, XI, IX, V,
           II, I의 지역은 어느 정도로 통과한 것으로 보이지만 가장 정확한 지역은
@@ -50,8 +58,8 @@ const page = () => {
         </p>
       </section>
       <section className={classes.conclusion}>
-        <img src="/img5.png" alt="통계" />
-        <img src="/img6.png" alt="통계" />
+        <Image src={img5} alt="통계" />
+        <Image src={img6} alt="통계" />
         <p>
           좌의 사진은 실제로 필리핀 기숙사에서 1분 사용 후의 상태이며 우의
           사진은 실제로 한국 귀국 후 1주일 사용 후의 상태입니다. 필리핀의
