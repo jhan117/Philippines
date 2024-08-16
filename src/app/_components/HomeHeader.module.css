@@ -1,0 +1,22 @@
+.homeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25em;
+
+  background-color: #333;
+  color: white;
+}
+
+.homeHeader h1 {
+  font-size: 1.5em;
+}
+
+.homeNav {
+  display: flex;
+  column-gap: 1.25em;
+}
+
+.homeLinkItem a {
+  color: white;
+}
