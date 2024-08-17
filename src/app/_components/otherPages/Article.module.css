@@ -3,17 +3,37 @@
   flex-direction: column;
   row-gap: 2.5em;
 
-  padding: 3.75em;
+  margin: 1em;
+  padding: 3em;
+  min-width: 18.75em;
+  max-width: 37.5em;
+
+  border: 1px solid black;
+  border-radius: 1em;
+
+  width: 100%;
 }
 
 .article h2 {
   font-size: 1.5em;
+
+  border-bottom: 1px solid black;
 }
 
 .writer {
   text-align: right;
 }
 
-.article img {
-  width: 100%;
+.main {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+
+  align-items: center;
+}
+
+.concl {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
 }

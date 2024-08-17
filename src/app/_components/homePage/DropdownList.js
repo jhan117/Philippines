@@ -5,7 +5,7 @@ import { Fragment, useState } from "react";
 import { createPortal } from "react-dom";
 import DropdownItem from "./DropdownItem";
 import Backdrop from "../ui/Backdrop";
-import { dropdownList } from "@/app/_utils/data";
+import { envList } from "@/app/_utils/data";
 
 import DROP_DOWN from "../../_assets/drop-down.svg";
 
@@ -31,12 +31,12 @@ const Dropdown = (props) => {
             toggle ? classes.dropdownToggle : ""
           }`}
         >
-          {dropdownList.map((item) => (
+          {envList.map((item) => (
             <DropdownItem
               key={item.id}
               href={`${props.href}/${item.enName}`}
               text={item.koName}
-              isLast={item.id == "i3" ? true : false}
+              isLast={item.id == "last" ? true : false}
               dropdownHandle={menuHandler}
             />
           ))}

@@ -20,31 +20,46 @@ const sequenceList = [
 const memberList = [
   {
     id: "m1",
-    src: "",
+    src: "REDACTED-UUID",
     name: "신나연",
     major: "수학교육과",
   },
   {
     id: "m2",
-    src: "",
+    src: "REDACTED-UUID",
     name: "김선우",
     major: "전자전기공학부\n전기공학과",
   },
-  { id: "m3", src: "", name: "윤예경", major: "생명공학과" },
+  {
+    id: "m3",
+    src: "REDACTED-UUID",
+    name: "윤예경",
+    major: "생명공학과",
+  },
   {
     id: "m4",
     src: "REDACTED-UUID",
     name: "권기영",
     major: "컴퓨터공학과",
   },
-  { id: "m5", src: "", name: "김한나", major: "언어치료학과" },
+  {
+    id: "m5",
+    src: "REDACTED-UUID",
+    name: "김한나",
+    major: "언어치료학과",
+  },
   {
     id: "m6",
-    src: "",
+    src: "REDACTED-UUID",
     name: "김혜민",
     major: "시각디자인융합학부\n서비스마케팅디자인과",
   },
-  { id: "m7", src: "", name: "신창대", major: "체육학부\n체육학과" },
+  {
+    id: "m7",
+    src: "REDACTED-UUID",
+    name: "신창대",
+    major: "체육학부\n체육학과",
+  },
 ];
 
 const navList = [
@@ -73,9 +88,19 @@ const navList = [
     koName: "경제",
     enName: "economy",
   },
+  {
+    id: "a5",
+    koName: "인터뷰",
+    enName: "interview",
+  },
+  {
+    id: "a6",
+    koName: "취업",
+    enName: "job",
+  },
 ];
 
-const dropdownList = [
+const envList = [
   {
     id: "i1",
     koName: "교통",
@@ -87,9 +112,22 @@ const dropdownList = [
     enName: "weather",
   },
   {
-    id: "i3",
+    id: "last",
     koName: "수질",
     enName: "water_quality",
+  },
+];
+
+const ecoLIst = [
+  {
+    id: "e1",
+    koName: "빈부격차",
+    enName: "wealth_gap",
+  },
+  {
+    id: "last",
+    koName: "교육",
+    enName: "education",
   },
 ];
 
@@ -103,4 +141,4 @@ const insList = [
   { id: "ins7", name: "신창대", insId: "dae_0124" },
 ];
 
-export { sequenceList, memberList, navList, dropdownList, insList };
+export { sequenceList, memberList, navList, envList, insList };

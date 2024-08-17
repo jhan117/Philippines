@@ -2,16 +2,71 @@
 
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import MemberItem from "./_components/homePage/MemberItem";
 
 import { sequenceList, memberList } from "./_utils/data";
-import MemberItem from "./_components/homePage/MemberItem";
+import imgList from "./_utils/imgs";
 
 import classes from "./page.module.css";
 
+const delay = 2500;
+
 export default function HomeMain() {
+  const [index, setIndex] = useState(0);
+  const timeoutRef = useRef(null);
+
+  const resetTimeout = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+  };
+
+  useEffect(() => {
+    resetTimeout();
+    timeoutRef.current = setTimeout(
+      () =>
+        setIndex((prevIdx) =>
+          prevIdx === imgList.length - 1 ? 0 : prevIdx + 1
+        ),
+      delay
+    );
+    return () => {
+      resetTimeout();
+    };
+  }, [index]);
+
   return (
     <main>
       <div className={classes.hero}>
+        <div
+          className={classes.slideshowSlider}
+          style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
+        >
+          {imgList.map((img, idx) => (
+            <Image
+              key={idx}
+              className={classes.slide}
+              src={img}
+              alt="필리핀 이미지"
+            />
+          ))}
+        </div>
+        <div className={classes.slideshowDots}>
+          {imgList.map((_, idx) => (
+            <div
+              key={idx}
+              className={`${classes.slideshowDot} ${
+                idx == index ? classes.active : ""
+              }`}
+              onClick={() => {
+                setIndex(idx);
+              }}
+            ></div>
+          ))}
+        </div>
+
         <TypeAnimation
           className={classes.heroText}
           sequence={sequenceList}

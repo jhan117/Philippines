@@ -7,7 +7,7 @@ export const metadata = {
   title: "필리핀 2조",
   description: "필리핀2조가 만든 웹사이트",
   icons: {
-    icon: "/philippines.png",
+    icon: "/Philippines/philippines.png",
   },
 };
 
