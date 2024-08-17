@@ -1,5 +1,5 @@
-import { Fragment } from "react";
+import BlogHeader from "@/app/_components/blog/BlogHeader";
 
 export default function page() {
-  return <Fragment></Fragment>;
+  return <BlogHeader></BlogHeader>;
 }

@@ -61,24 +61,3 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-.teamIntro {
-  padding: 40px 20px;
-  text-align: center;
-  display: flex;
-  row-gap: 1.25em;
-  place-items: center;
-  flex-direction: column;
-}
-
-.teamIntro h2 {
-  font-size: 2em;
-}
-
-.memberCon {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.25em;
-  max-width: 64.25em;
-}

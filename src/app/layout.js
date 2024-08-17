@@ -1,5 +1,5 @@
-import HomeHeader from "./_components/HomeHeader";
-import HomeFooter from "./_components/HomeFooter";
+import HomeHeader from "./_components/homePage/HomeHeader";
+import HomeFooter from "./_components/homePage/HomeFooter";
 
 import "./layout.css";
 
@@ -11,14 +11,16 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+const RootLayout = ({ children }) => {
   return (
     <html lang="ko">
       <body>
         <HomeHeader />
-        {children}
+        <main>{children}</main>
         <HomeFooter />
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

@@ -1,8 +1,25 @@
 import { Fragment } from "react";
-import InstaItem from "./homePage/InstaItem";
+
+import { insList } from "../../_utils/data";
 
 import classes from "./HomeFooter.module.css";
-import { insList } from "../_utils/data";
+
+const InstaItem = (props) => {
+  return (
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      href={`https://www.instagram.com/${props.insId}`}
+      style={{
+        color: "#f90",
+        textDecoration: "none",
+        margin: "0 0.625em",
+      }}
+    >
+      {props.name}
+    </a>
+  );
+};
 
 const HomeFooter = () => {
   return (

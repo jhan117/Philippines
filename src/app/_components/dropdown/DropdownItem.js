@@ -1,7 +1,8 @@
 import { Fragment } from "react";
-import LinkItem from "./LinkItem";
 
-import classes from "./DropdonwItem.module.css";
+import LinkItem from "../ui/LinkItem";
+
+import classes from "./DropdownItem.module.css";
 
 const DropdownItem = (props) => {
   return (

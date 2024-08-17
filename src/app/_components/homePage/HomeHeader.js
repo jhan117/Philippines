@@ -1,7 +1,7 @@
-import DropdownList from "./homePage/DropdownList";
-import LinkItem from "./homePage/LinkItem";
-import { navList } from "../_utils/data";
-import { envList, ecoList } from "@/app/_utils/data";
+import DropdownList from "../dropdown/DropdownList";
+import LinkItem from "../ui/LinkItem";
+
+import { navList, envList, ecoList } from "@/app/_utils/data";
 
 import classes from "./HomeHeader.module.css";
 

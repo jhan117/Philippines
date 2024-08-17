@@ -1,7 +1,5 @@
-import { Fragment } from "react";
+import BlogHeader from "@/app/_components/blog/BlogHeader";
 
-const page = () => {
-  return <Fragment></Fragment>;
-};
-
-export default page;
+export default function page() {
+  return <BlogHeader></BlogHeader>;
+}
