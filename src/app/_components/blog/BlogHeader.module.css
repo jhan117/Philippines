@@ -1,10 +1,10 @@
 .card {
   display: flex;
   flex-direction: column;
-  row-gap: 2.5em;
+  row-gap: 2em;
 
-  margin: 1em;
-  padding: 1.25em;
+  margin: 1.25em;
+  padding: 1.5em;
   max-width: 37.5em;
 
   border: 1px solid black;
@@ -12,11 +12,13 @@
 }
 
 .heading {
-  font-size: 1.5em;
-
   border-bottom: 1px solid black;
 }
 
 .writer {
   text-align: right;
+}
+
+.card a {
+  color: #6c87ff;
 }

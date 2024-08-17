@@ -45,6 +45,7 @@ const HomeSlide = () => {
             className={classes.slide}
             src={img}
             alt="필리핀 이미지"
+            onContextMenu={(e) => e.preventDefault()}
           />
         ))}
       </div>

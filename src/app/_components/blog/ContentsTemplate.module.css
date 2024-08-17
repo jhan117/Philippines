@@ -1,0 +1,28 @@
+.h3Section {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5em;
+}
+
+.h4Con,
+.manyP {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+
+.h4Section {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.25em;
+}
+
+.addList {
+  font-size: 0.9em;
+}
+
+.listCon {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.2em;
+}

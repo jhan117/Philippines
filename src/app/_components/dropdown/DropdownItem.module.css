@@ -8,7 +8,13 @@
   margin: 0.5em 0;
 }
 
+.dropdownItem {
+  width: 100%;
+}
+
 .dropdownItem a {
+  display: block;
+
   padding: 0.25em 0.5em;
   padding-right: 1.75em; /* icon 1.25em 포함*/
 }

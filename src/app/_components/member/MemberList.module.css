@@ -7,10 +7,6 @@
   flex-direction: column;
 }
 
-.teamIntro h2 {
-  font-size: 2em;
-}
-
 .memberCon {
   display: flex;
   flex-wrap: wrap;
