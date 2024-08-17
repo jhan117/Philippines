@@ -1,6 +1,7 @@
 import DropdownList from "./homePage/DropdownList";
 import LinkItem from "./homePage/LinkItem";
 import { navList } from "../_utils/data";
+import { envList, ecoList } from "@/app/_utils/data";
 
 import classes from "./HomeHeader.module.css";
 
@@ -18,6 +19,17 @@ const HomeHeader = () => {
                   className={classes.homeLinkItem}
                   href={`/${item.enName}`}
                   text={item.koName}
+                  item={envList}
+                />
+              );
+            } else if (item.id == "a5") {
+              return (
+                <DropdownList
+                  key={item.id}
+                  className={classes.homeLinkItem}
+                  href={`/${item.enName}`}
+                  text={item.koName}
+                  item={ecoList}
                 />
               );
             } else {

@@ -84,17 +84,17 @@ const navList = [
     enName: "culture",
   },
   {
-    id: "a4",
+    id: "a5",
     koName: "경제",
     enName: "economy",
   },
   {
-    id: "a5",
+    id: "a6",
     koName: "인터뷰",
     enName: "interview",
   },
   {
-    id: "a6",
+    id: "a7",
     koName: "취업",
     enName: "job",
   },
@@ -118,7 +118,7 @@ const envList = [
   },
 ];
 
-const ecoLIst = [
+const ecoList = [
   {
     id: "e1",
     koName: "빈부격차",
@@ -141,4 +141,4 @@ const insList = [
   { id: "ins7", name: "신창대", insId: "dae_0124" },
 ];
 
-export { sequenceList, memberList, navList, envList, insList };
+export { sequenceList, memberList, navList, envList, ecoList, insList };

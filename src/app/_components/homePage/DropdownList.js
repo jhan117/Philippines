@@ -1,13 +1,12 @@
 "use client";
 
-import Image from "next/image";
 import { Fragment, useState } from "react";
 import { createPortal } from "react-dom";
+import Image from "next/image";
+
 import DropdownItem from "./DropdownItem";
 import Backdrop from "../ui/Backdrop";
-import { envList } from "@/app/_utils/data";
-
-import DROP_DOWN from "../../_assets/drop-down.svg";
+import DROP_DOWN from "@/app/_assets/drop-down.svg";
 
 import classes from "./DropdownList.module.css";
 
@@ -31,7 +30,7 @@ const Dropdown = (props) => {
             toggle ? classes.dropdownToggle : ""
           }`}
         >
-          {envList.map((item) => (
+          {props.item.map((item) => (
             <DropdownItem
               key={item.id}
               href={`${props.href}/${item.enName}`}

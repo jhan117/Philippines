@@ -8,8 +8,8 @@
 
   display: none;
   flex-direction: column;
-  place-items: center;
-  padding: 8px 0px;
+  align-items: flex-start;
+  padding: 0.5em 0;
 
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 6px;
