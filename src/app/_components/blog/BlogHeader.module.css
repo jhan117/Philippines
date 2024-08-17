@@ -20,3 +20,7 @@
 .writer {
   text-align: right;
 }
+
+.card a {
+  color: #6c87ff;
+}

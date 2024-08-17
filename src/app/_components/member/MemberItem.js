@@ -19,6 +19,7 @@ const MemberItem = (props) => {
         width={100}
         height={100}
         alt={props.name}
+        onContextMenu={(e) => e.preventDefault()}
       />
       <h3>{props.name}</h3>
       <div className={classes.info}>

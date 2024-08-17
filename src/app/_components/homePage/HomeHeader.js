@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import DropdownList from "../dropdown/DropdownList";
 import LinkItem from "../ui/LinkItem";
 
@@ -8,7 +10,9 @@ import classes from "./HomeHeader.module.css";
 const HomeHeader = () => {
   return (
     <header className={classes.homeHeader}>
-      <h1>필리핀 2조</h1>
+      <h1>
+        <Link href="/">필리핀 2조</Link>
+      </h1>
       <nav>
         <ul className={classes.homeNav}>
           {navList.map((item) => {
