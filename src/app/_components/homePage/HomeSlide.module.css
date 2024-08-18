@@ -27,11 +27,12 @@
   text-align: center;
   display: flex;
   flex-direction: row;
-  column-gap: 1em;
+  column-gap: 0.5em;
   position: absolute;
-  bottom: 1em;
+  bottom: 1.2em;
   left: 50%;
   transform: translate(-50%, 0);
+  width: 100%;
 
   flex-wrap: wrap;
   justify-content: center;
@@ -40,8 +41,8 @@
 
 .slideshowDot {
   display: inline-block;
-  height: 0.7em;
-  width: 0.7em;
+  height: 0.5em;
+  width: 0.5em;
   border-radius: 50%;
   cursor: pointer;
   background-color: #c4c4c4;
@@ -53,11 +54,21 @@
 
 .heroText {
   padding: 0px 32px;
-  font-size: 2em;
-  text-shadow: 0 0 0.5em black, 0 0 0.5em black;
+  font-size: 1.25em;
+  text-shadow: 0 0 1em black, 0 0 1em black;
   position: absolute;
 
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.photoName {
+  position: absolute;
+  bottom: 0.2em;
+  right: 0.2em;
+
+  font-size: 0.75em;
+  text-shadow: 0 0 1em black, 0 0 1em black;
 }

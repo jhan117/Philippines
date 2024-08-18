@@ -41,7 +41,15 @@ const PList = (props) => (
 
 const H4Contents = (props) => (
   <li className={classes.h4Section}>
-    <h4>{props.h4Link ? <a href={props.h4Link}>{props.h4}</a> : props.h4}</h4>
+    <h4>
+      {props.h4Link ? (
+        <a href={props.h4Link} target="_blank">
+          {props.h4}
+        </a>
+      ) : (
+        props.h4
+      )}
+    </h4>
     {Array.isArray(props.p) ? <PList p={props.p} /> : <p>{props.p}</p>}
   </li>
 );

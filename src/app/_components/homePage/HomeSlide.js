@@ -62,6 +62,7 @@ const HomeSlide = () => {
           ></div>
         ))}
       </div>
+      <p className={classes.photoName}>Photographs by Vanessa</p>
 
       <TypeAnimation
         className={classes.heroText}
