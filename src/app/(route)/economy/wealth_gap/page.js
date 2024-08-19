@@ -30,7 +30,7 @@ const page = () => {
       <SectionContent data={wealthData[0]} />
       <hr />
       {wealthH3Data.map((d, h3Idx) => (
-        <NotHasH4Content data={d} h3Idx={h3Idx} />
+        <NotHasH4Content data={d} h3Idx={h3Idx} tag="wealth_gap" />
       ))}
       <hr />
       <SectionContent data={wealthData[1]} />

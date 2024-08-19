@@ -5,7 +5,12 @@ import { Fragment } from "react";
 
 import classes from "./ContentsTemplate.module.css";
 
-import { educationImages, weatherImages, jobImages } from "@/app/_utils/images";
+import {
+  educationImages,
+  weatherImages,
+  jobImages,
+  wealthGapImages,
+} from "@/app/_utils/images";
 
 const H3Contents = (props) => (
   <section className={classes.h3Section}>
@@ -29,7 +34,12 @@ const PList = (props) => (
     {props.p.length > 2 ? (
       <div className={classes.manyP}>
         {props.p.map((d, idx) => (
-          <p key={idx}>{d}</p>
+          <Fragment>
+            {props.h3Idx == 1 && props.pIdx == 0 && idx == 4 && (
+              <Image src={wealthGapImages[1]} />
+            )}
+            <p key={idx}>{d}</p>
+          </Fragment>
         ))}
       </div>
     ) : (
@@ -148,9 +158,18 @@ const NotHasH4Content = (props) => {
 
   return (
     <H3Contents key={props.h3Idx} h3={h3Data}>
+      {props.tag == "wealth_gap" && props.h3Idx == 0 && (
+        <Image src={wealthGapImages[0]} />
+      )}
       {Array.isArray(pData) ? (
         pData.map((pd, idx) => (
-          <PList key={idx} p={pd} tag={props.tag} pIdx={idx} />
+          <PList
+            h3Idx={props.h3Idx}
+            key={idx}
+            p={pd}
+            tag={props.tag}
+            pIdx={idx}
+          />
         ))
       ) : (
         <p>{pData}</p>

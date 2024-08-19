@@ -21,9 +21,19 @@ import js7 from "@/app/_assets/jobImgs/js7.jpg";
 import js8 from "@/app/_assets/jobImgs/js8.jpg";
 import js9 from "@/app/_assets/jobImgs/js9.jpg";
 
+import wgk1 from "@/app/_assets/wealthGapImgs/wk1.jpg";
+import wgk2 from "@/app/_assets/wealthGapImgs/wk2.jpg";
+
 const waterImages = [wc1, wc2, wc3, wc4, wc5, wc6];
 const weatherImages = [wk1, wk2];
 const educationImages = [es1, es2];
 const jobImages = [js1, js2, js3, , js4, js5, js6, js7, js8, js9];
+const wealthGapImages = [wgk1, wgk2];
 
-export { waterImages, weatherImages, educationImages, jobImages };
+export {
+  waterImages,
+  weatherImages,
+  educationImages,
+  jobImages,
+  wealthGapImages,
+};
