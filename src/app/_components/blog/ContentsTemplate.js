@@ -1,5 +1,11 @@
+"use client";
+
+import Image from "next/image";
 import { Fragment } from "react";
+
 import classes from "./ContentsTemplate.module.css";
+
+import { educationImages, weatherImages, jobImages } from "@/app/_utils/images";
 
 const H3Contents = (props) => (
   <section className={classes.h3Section}>
@@ -29,6 +35,9 @@ const PList = (props) => (
     ) : (
       <Fragment>
         <p>{props.p[0]}</p>
+        {props.tag == "weather" && props.pIdx == 0 && (
+          <Image src={weatherImages[0]} />
+        )}
         {Array.isArray(props.p[1]) ? (
           <PContents data={props.p[1]} />
         ) : (
@@ -50,7 +59,36 @@ const H4Contents = (props) => (
         props.h4
       )}
     </h4>
-    {Array.isArray(props.p) ? <PList p={props.p} /> : <p>{props.p}</p>}
+    {props.tag == "job" && props.h3Idx == 2 && props.h4Idx == 0 && (
+      <div className={classes.jobSchoolImg}>
+        {props.jobImg.slice(0, 3).map((d) => (
+          <Image src={d} />
+        ))}
+      </div>
+    )}
+    {props.tag == "job" && props.h3Idx == 2 && props.h4Idx == 1 && (
+      <div className={classes.jobHotelImg}>
+        {props.jobImg.slice(3, 5).map((d) => (
+          <Image src={d} />
+        ))}
+      </div>
+    )}
+    {props.tag == "job" && props.h3Idx == 1 && props.jobImg && (
+      <Image src={props.jobImg} />
+    )}
+    {Array.isArray(props.p) ? (
+      <PList p={props.p} />
+    ) : (
+      <Fragment>
+        <p>{props.p}</p>
+        {props.tag == "education" && props.h3Idx == 0 && props.h4Idx == 0 && (
+          <Image src={educationImages[0]} />
+        )}
+        {props.tag == "education" && props.h3Idx == 1 && props.h4Idx == 1 && (
+          <Image src={educationImages[1]} />
+        )}
+      </Fragment>
+    )}
   </li>
 );
 
@@ -80,14 +118,24 @@ const HasH4Content = (props) => {
 
   return (
     <H3Contents key={props.h3Idx} h3={h3Data}>
-      {introData ? <p>{introData}</p> : null}
+      {introData && <p>{introData}</p>}
+      {props.tag == "weather" && props.h3Idx == 1 && (
+        <Image src={weatherImages[1]} />
+      )}
       {[...Array(lenData)].map((_, h4Idx) => (
         <ul className={classes.h4Con}>
           <H4Contents
             key={h4Idx}
+            h4Idx={h4Idx}
+            h3Idx={props.h3Idx}
             h4={h4Data[h4Idx]}
             p={pData[h4Idx]}
-            h4Link={h4LinkData ? h4LinkData[h4Idx] : null}
+            jobImg={
+              (props.tag == "job" && props.h3Idx == 1 && jobImages[h4Idx]) ||
+              (props.tag == "job" && props.h3Idx == 2 && jobImages.slice(5, 10))
+            }
+            h4Link={h4LinkData && h4LinkData[h4Idx]}
+            tag={props.tag}
           />
         </ul>
       ))}
@@ -101,7 +149,9 @@ const NotHasH4Content = (props) => {
   return (
     <H3Contents key={props.h3Idx} h3={h3Data}>
       {Array.isArray(pData) ? (
-        pData.map((pd, idx) => <PList key={idx} p={pd} />)
+        pData.map((pd, idx) => (
+          <PList key={idx} p={pd} tag={props.tag} pIdx={idx} />
+        ))
       ) : (
         <p>{pData}</p>
       )}

@@ -26,3 +26,17 @@
   flex-direction: column;
   row-gap: 0.2em;
 }
+
+.jobSchoolImg,
+.jobHotelImg {
+  display: flex;
+  flex-direction: row;
+}
+
+.jobSchoolImg img {
+  width: 33%;
+}
+
+.jobHotelImg img {
+  width: 50%;
+}

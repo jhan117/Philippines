@@ -46,6 +46,7 @@ const HomeSlide = () => {
             src={img}
             alt="필리핀 이미지"
             onContextMenu={(e) => e.preventDefault()}
+            loading="eager"
           />
         ))}
       </div>
@@ -54,7 +55,7 @@ const HomeSlide = () => {
           <div
             key={idx}
             className={`${classes.slideshowDot} ${
-              idx == index ? classes.active : ""
+              idx == index && classes.active
             }`}
             onClick={() => {
               setIndex(idx);

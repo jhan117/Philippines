@@ -1,0 +1,11 @@
+.interviewCon {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+
+.questionCon {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.25em;
+}

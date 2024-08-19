@@ -14,9 +14,9 @@ const page = () => {
       <hr />
       {weatherH3Data.map((d, h3Idx) =>
         d.h4 ? (
-          <HasH4Content data={d} h3Idx={h3Idx} />
+          <HasH4Content data={d} h3Idx={h3Idx} tag="weather" />
         ) : (
-          <NotHasH4Content data={d} h3Idx={h3Idx} />
+          <NotHasH4Content data={d} h3Idx={h3Idx} tag="weather" />
         )
       )}
     </BlogHeader>

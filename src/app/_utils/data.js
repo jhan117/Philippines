@@ -141,4 +141,21 @@ const insList = [
   { id: "ins7", name: "신창대", insId: "dae_0124" },
 ];
 
-export { sequenceList, memberList, navList, envList, ecoList, insList };
+const category = [
+  { id: "history", tag: "역사", name: "김한나" },
+  { id: "traffic", tag: "교통", name: "김선우" },
+  { id: "weather", tag: "날씨", name: "김혜민" },
+  { id: "water_quality", tag: "수질", name: "윤예경" },
+  { id: "wealth_gap", tag: "빈부격차", name: "권기영" },
+  { id: "education", tag: "교육", name: "신나연" },
+];
+
+export {
+  sequenceList,
+  memberList,
+  navList,
+  envList,
+  ecoList,
+  insList,
+  category,
+};

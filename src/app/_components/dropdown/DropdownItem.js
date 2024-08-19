@@ -13,7 +13,7 @@ const DropdownItem = (props) => {
         text={props.text}
         dropdownHandle={props.dropdownHandle}
       />
-      {props.isLast ? null : (
+      {!props.isLast && (
         <li className={classes.divider}>
           <hr />
         </li>

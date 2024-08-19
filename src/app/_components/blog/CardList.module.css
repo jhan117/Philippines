@@ -1,0 +1,12 @@
+.cardCon {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 1em;
+  column-gap: 1em;
+  place-content: center;
+  place-items: center;
+
+  max-width: 33.125em;
+  margin: 2em;
+}

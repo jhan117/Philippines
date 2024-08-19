@@ -31,7 +31,7 @@ const HomeFooter = () => {
           return (
             <Fragment>
               <InstaItem key={data.id} name={data.name} insId={data.insId} />
-              {data.id == "ins7" ? null : "|"}
+              {data.id != "ins7" && "|"}
             </Fragment>
           );
         })}

@@ -17,9 +17,8 @@ const Dropdown = (props) => {
 
   return (
     <Fragment>
-      {toggle
-        ? createPortal(<Backdrop onClick={menuHandler} />, document.body)
-        : null}
+      {toggle &&
+        createPortal(<Backdrop onClick={menuHandler} />, document.body)}
       <li className={props.className}>
         <button className={classes.btn} onClick={menuHandler}>
           {props.text}
@@ -27,7 +26,7 @@ const Dropdown = (props) => {
         </button>
         <ul
           className={`${classes.dropdownMenu} ${
-            toggle ? classes.dropdownToggle : ""
+            toggle && classes.dropdownToggle
           }`}
         >
           {props.item.map((item) => (

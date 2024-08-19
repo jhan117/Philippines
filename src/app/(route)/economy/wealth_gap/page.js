@@ -14,7 +14,7 @@ const LinkList = () => (
   <div>
     {wealthLinkData.map((l, idx) => (
       <p key={idx}>
-        {l.writer ? `${l.writer},` : null}
+        {l.writer && `${l.writer},`}
         <a href={l.link} target="_blank">
           {l.title}
         </a>
