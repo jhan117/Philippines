@@ -45,6 +45,15 @@ const PList = (props) => (
             {props.tag == "traffic" &&
               props.h3Idx == 2 &&
               props.h4Idx == 0 &&
+              idx == 0 && (
+                <div className={classes.jobHotelImg}>
+                  <Image src={trafficImages[8]} />
+                  <Image src={trafficImages[9]} />
+                </div>
+              )}
+            {props.tag == "traffic" &&
+              props.h3Idx == 2 &&
+              props.h4Idx == 0 &&
               idx == 2 && (
                 <div className={classes.trafficMapImg}>
                   <Image src={trafficImages[10]} />
