@@ -1,36 +1,181 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🛠️ 개발 일지: 웹사이트 여정의 모든 것! 🌐
 
-## Getting Started
+### 2024년 7월 29일
 
-First, run the development server:
+**진행 내용:**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- 처음 예제 사이트 제작.
+  - 약 2년만의 웹개발이라 기억을 되살릴겸 간단하게 제작 후 배포까지 시도함.
+  - 빠르게 HTML, CSS 이용해 뼈대 제작.
+- 배포했더니 경로 연결 안되는 문제 발생.
+  - 원인: 배포 후 바로 바뀌지 않았음.
+  - 해결: 그냥 기다리면 됨.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**다음 작업 계획:**
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- 프레임워크를 이용해 중복되는 코드 덜 쓰기.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### 2024년 8월 15일
 
-## Learn More
+**진행 내용:**
 
-To learn more about Next.js, take a look at the following resources:
+- Next.js 프레임워크 선택.
+  - React 기억 되살리기.
+- 카테고리 변경 및 드롭다운 메뉴 만들기.
+  - 카테고리 4가지로 변경.
+  - 드롭다운 만들고 `createPortal`로 모달 만들어 닫히게 만듦.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**다음 작업 계획:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Github에 배포하기.
 
-## Deploy on Vercel
+### 2024년 8월 16일
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**진행 내용:**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- 이미지 깨지는 문제 발생.
+  - 원인: 사이트 주소의 리포지토리 이름을 넣어줘야 함.
+  - 해결: 하드코딩하기 싫어서 import 방식으로 해결함.
+- 타이핑 되는 글자 추가.
+- Github Pages로 배포.
+
+**다음 작업 계획:**
+
+- 본문 스타일 수정하고 전부 작성하기
+
+### 2024년 8월 17일
+
+**진행 내용:**
+
+- 사진 슬라이드 제작.
+- 조원들 사진 넣기.
+  - 글자 위치 안 맞는 부분 수정함.
+- 카테고리 추가
+  - 인터뷰, 취업 추가
+  - 경제에 dropdown으로 교육과 빈부격차 추가
+- 본문 작성
+  - 블로그 형식으로 글자만 먼저 넣기
+  - 인터뷰 내용은 카드로 추후 넣기
+- 갑자기 블로그 양식이 다른 페이지에서 에러 뜨면서 안뜸.
+  - 원인: props로 component 불러놨는데 데이터를 안줘서 그럼.
+  - 해결: 값이 존재하면 실행하도록 변경.
+- 코드 정리하면서 폴더 구조 정리함
+- dropdown 메뉴 hover 할 때 색상이 글자 부분만 나타나는 문제 해결.
+- 필리핀 2조 제목에 링크
+
+**문제점:**
+
+- 모바일에서 사진이 너무 보기 힘들게 나옴
+  - 원인: 모바일 우선으로 반응형을 제작했어야 했는데 고려하지 못함.
+  - 해결: 반응형 css 코드를 피할 수 없겠군.
+- 사진 크기가 조절 안되는 문제가 생김
+- 사진 우클릭 가능해서 저장되는 문제가 생김
+  - 원인: css코드만으로는 적용이 안됨
+  - 해결: React의 `onContextMenu` 속성을 이용하여 함수를 `e.preventDefault()` 이렇게 작성해주면 됨
+
+**다음 작업 계획:**
+
+- 본문
+  - 작성자 위치 변경
+  - 사진 첨부
+  - 스타일 이쁘게
+    - 글의 구조가 전부 달라서 공통 적용해줄 수가 없는데 하고 싶다면 나중에 refactor 할 때 진행하기
+  - 링크 새 탭에서 열기
+- 인터뷰 본문
+  - 카드 제작
+  - 동적 라우팅
+- 모바일 먼저 반응형 css 코드 작성하기
+  - 글자 크기 및 사진
+  - 사이드바
+- 사진 출처 글자 작성하기
+- 사진 슬라이드의 dot들의 반응형 제작
+
+### 2024년 8월 18일
+
+**진행 내용:**
+
+- 본문 작성 완료
+  - 복붙하다보니 규칙이 보여서 컴포넌트 만들어서 코드 중복 제거함
+  - 파이썬의 `range()`기능을 쓰고 싶었는데 js에는 존재하지 않음
+    - 원인: react.js에서는 for문을 사용할 수 없음
+    - 해결: `[...Array(NUM)].map((_,idx)=>())`사용
+  - 링크 새 탭에서 열도록 수정 완료
+- 사진 출처 작성 완료
+- 사진 슬라이드 반응형
+  - 생각보다 점 작은 게 더 이뻐서 그대로 둠
+- 있는지 여부 체크할 때 삼항 연산자 대신 `&&` 쓰는 게 깔끔함
+
+**다음 작업 계획:**
+
+- 본문
+  - 사진 첨부
+  - 인터뷰 내용 추가
+
+### 2024년 8월 19일
+
+**진행 내용:**
+
+- 본문 수정
+  - 인터뷰 페이지
+    - 동적 경로 생성
+      - 폴더 하단에 `[Id]` 폴더 생성 후 작업
+      - `localhost:3000/interview/weather?lang=ko`
+      - `{ params: { interviewId: "weather" }, searchParams: { lang: "ko" } }`
+    - 카드 스타일
+  - 나머지 페이지
+    - 메인 화면 이미지 로딩 속도 `eager`로 변경
+  - 사진 추가
+    - 사진이 제어 안되는 문제 발생
+      - 해결: width를 퍼센트 값으로 주면서 제어 가능
+    - 수질, 교육, 빈부격차 업로드 완료
+
+**문제점:**
+
+- `Error: Page "/interview/[interviewId]" is missing "generateStaticParams()" so it cannot be used with "output: export" config.`
+  - 원인: 동적 경로를 위해 `generateStaticParams()`를 사용해야 하는데 적용하지 않았음.
+  - 해결: `generateStaticParams()`에 페이지 경로 전부를 넣어서 반환하면 됨. `[interviewId: ""]`
+- `TypeError: Cannot read properties of undefined (reading 'map')`
+  - 원인: 동적 페이지를 사전에 정적으로 생성을 하기 때문에 내용을 전부 입력해야 함.
+  - 해결: 인터뷰 내용 채움으로써 에러 해결
+
+**다음 작업 계획:**
+
+- 본문 오타 검색
+- 추가 기능
+  - 뒤로 가기 버튼
+- 인터뷰 동영상
+- 나머지 페이지 사진
+
+### 2024년 8월 20일 (마지막)
+
+**진행 내용:**
+
+- 본문
+  - 역사, 교통, 날씨, 문화, 취업 사진 업로드
+  - 오타 수정
+  - 교통 내용(지프리 타는 tip) + 사진 추가
+  - 인터뷰에 인터뷰 영상 업로드
+- 버그 수정
+  - 역사 기울림꼴 수정
+- 추가 기능
+  - 뒤로 가기
+    - 인터뷰의 경우에만 뒤로가기, 나머지는 홈으로
+  - 개발 일지 추가
+
+**문제점:**
+
+- `Module parse failed: Unexpected character '' (1:0) You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file.`
+  - 원인: 비디오 코덱 문제였음...
+  - 해결: 파일 형식은 MP4로 같지만 코덱만 변환함. 비디오 H.264, 오디오 AAC
+- `File public/videos/interview.mp4 is 131.73 MB; this exceeds GitHub's file size limit of 100.00 MB`
+  - 원인1: 비디오 파일이 너무 커서 문제였음...
+  - 해결1: 유튜브에 비공개로 올리고 공유하기 누를 때 퍼가기 누르면 `iframe` 코드를 줌
+  - 원인2: 커밋을 이미 한 상태에서 쌓아서 커밋하면 안됨.
+  - 해결2: `git reset HEAD~`로 최신 커밋 취소하고 다시 커밋하면 됨.
+- `For production Image Optimization with Next.js, the optional 'sharp' package is strongly recommended. Run 'npm i sharp', and Next.js will use it automatically for Image Optimization.`
+  - 원인: 이미지 최적화는 못참지 ㅋㅋ
+  - 해결: `npm i sharp`
+
+---
+
+이제 웹사이트가 더욱 완벽해졌습니다! 많은 사람들이 이 사이트를 방문하고, 그간의 개발 여정을 함께해 주길 바랍니다. 🚀✨

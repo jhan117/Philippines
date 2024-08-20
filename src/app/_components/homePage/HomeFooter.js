@@ -3,6 +3,7 @@ import { Fragment } from "react";
 import { insList } from "../../_utils/data";
 
 import classes from "./HomeFooter.module.css";
+import Link from "next/link";
 
 const InstaItem = (props) => {
   return (
@@ -35,6 +36,19 @@ const HomeFooter = () => {
             </Fragment>
           );
         })}
+      </p>
+      <p>
+        혹시 개발에 관심이 있나요?:{" "}
+        <Link
+          href="https://github.com/jhan117/Philippines"
+          target="_blank"
+          style={{
+            color: "#f90",
+            textDecoration: "none",
+          }}
+        >
+          개발 일지 보러가기
+        </Link>
       </p>
       <p>© Copyright 2024 필리핀 2조. All Rights Reserved.</p>
     </footer>
