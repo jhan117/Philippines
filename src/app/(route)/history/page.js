@@ -1,28 +1,20 @@
 import BlogHeader from "@/app/_components/blog/BlogHeader";
-import {
-  HasH4Content,
-  NotHasH4Content,
-  SectionContent,
-} from "@/app/_components/blog/ContentsTemplate";
+import { MainSec, IntroOutroSec } from "@/app/_components/blog/ContentSections";
 
-import { historyData, historyH3Data } from "@/app/_utils/contents";
+import { histData } from "@/app/_utils/contents";
 
-const page = () => {
-  return (
-    <BlogHeader header="필리핀의 역사" writer="김한나">
-      <SectionContent data={historyData[0]} />
-      <hr />
-      {historyH3Data.map((d, h3Idx) =>
-        d.h4 ? (
-          <HasH4Content data={d} h3Idx={h3Idx} tag="history" />
-        ) : (
-          <NotHasH4Content data={d} h3Idx={h3Idx} />
-        )
-      )}
-      <hr />
-      <SectionContent data={historyData[1]} />
-    </BlogHeader>
-  );
-};
+const { title, author, intro, main, outro } = histData;
+
+const page = () => (
+  <BlogHeader title={title} author={author}>
+    <IntroOutroSec content={intro} />
+    <hr />
+    {main.map((section, idx) => (
+      <MainSec key={idx} section={section} />
+    ))}
+    <hr />
+    <IntroOutroSec content={outro} />
+  </BlogHeader>
+);
 
 export default page;

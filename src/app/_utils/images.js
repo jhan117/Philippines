@@ -25,11 +25,6 @@ import js10 from "@/app/_assets/jobImgs/js10.jpg";
 import wgk1 from "@/app/_assets/wealthGapImgs/wk1.jpg";
 import wgk2 from "@/app/_assets/wealthGapImgs/wk2.jpg";
 
-import hk1 from "@/app/_assets/historyImgs/hk1.png";
-import hk2 from "@/app/_assets/historyImgs/hk2.png";
-import hk3 from "@/app/_assets/historyImgs/hk3.png";
-import hk4 from "@/app/_assets/historyImgs/hk4.png";
-
 import tk1 from "@/app/_assets/trafficImgs/tk1.jpg";
 import tk2 from "@/app/_assets/trafficImgs/tk2.jpg";
 import tk3 from "@/app/_assets/trafficImgs/tk3.jpg";
@@ -61,7 +56,6 @@ const weatherImages = [wk1, wk2];
 const educationImages = [es1, es2];
 const jobImages = [js1, js2, js3, , js4, js5, js6, js7, js8, js9, js10];
 const wealthGapImages = [wgk1, wgk2];
-const historyImages = [hk1, hk2, hk3, hk4];
 const trafficImages = [
   tk1,
   tk2,
@@ -88,7 +82,6 @@ export {
   educationImages,
   jobImages,
   wealthGapImages,
-  historyImages,
   trafficImages,
   cultureImages,
 };

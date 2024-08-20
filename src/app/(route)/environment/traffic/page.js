@@ -2,15 +2,15 @@ import BlogHeader from "@/app/_components/blog/BlogHeader";
 import {
   HasH4Content,
   NotHasH4Content,
-  SectionContent,
-} from "@/app/_components/blog/ContentsTemplate";
+  TextSection,
+} from "@/app/_components/blog/ContentSections";
 
 import { trafficH3Data, trafficData } from "@/app/_utils/contents";
 
 const page = () => {
   return (
     <BlogHeader header="필리핀의 대중교통의 이해" writer="김선우">
-      <SectionContent data={trafficData[0]} />
+      <TextSection content={trafficData[0]} />
       <hr />
       {trafficH3Data.map((d, h3Idx) =>
         d.h4 ? (

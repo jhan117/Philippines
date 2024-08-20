@@ -5,7 +5,7 @@
 }
 
 .h4Con,
-.manyP {
+.multipleParagraphs {
   display: flex;
   flex-direction: column;
   row-gap: 1em;

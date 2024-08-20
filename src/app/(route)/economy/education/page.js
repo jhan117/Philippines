@@ -1,5 +1,5 @@
 import BlogHeader from "@/app/_components/blog/BlogHeader";
-import { HasH4Content } from "@/app/_components/blog/ContentsTemplate";
+import { HasH4Content } from "@/app/_components/blog/ContentSections";
 
 import { educationH3Data } from "@/app/_utils/contents";
 

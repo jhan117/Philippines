@@ -1,8 +1,8 @@
 import BlogHeader from "@/app/_components/blog/BlogHeader";
 import {
   NotHasH4Content,
-  SectionContent,
-} from "@/app/_components/blog/ContentsTemplate";
+  TextSection,
+} from "@/app/_components/blog/ContentSections";
 
 import {
   wealthData,
@@ -27,13 +27,13 @@ const LinkList = () => (
 const page = () => {
   return (
     <BlogHeader header="거리의 아이들, 빈부격차의 그림자" writer="권기영">
-      <SectionContent data={wealthData[0]} />
+      <TextSection content={wealthData[0]} />
       <hr />
       {wealthH3Data.map((d, h3Idx) => (
         <NotHasH4Content data={d} h3Idx={h3Idx} tag="wealth_gap" />
       ))}
       <hr />
-      <SectionContent data={wealthData[1]} />
+      <TextSection content={wealthData[1]} />
       <hr />
       <div>
         <p>- 참고자료:</p>
