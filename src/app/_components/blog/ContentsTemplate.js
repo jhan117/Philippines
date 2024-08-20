@@ -10,6 +10,9 @@ import {
   weatherImages,
   jobImages,
   wealthGapImages,
+  historyImages,
+  trafficImages,
+  cultureImages,
 } from "@/app/_utils/images";
 
 const H3Contents = (props) => (
@@ -35,9 +38,35 @@ const PList = (props) => (
       <div className={classes.manyP}>
         {props.p.map((d, idx) => (
           <Fragment>
-            {props.h3Idx == 1 && props.pIdx == 0 && idx == 4 && (
-              <Image src={wealthGapImages[1]} />
-            )}
+            {props.tag == "wealth_gap" &&
+              props.h3Idx == 1 &&
+              props.pIdx == 0 &&
+              idx == 4 && <Image src={wealthGapImages[1]} />}
+            {props.tag == "traffic" &&
+              props.h3Idx == 2 &&
+              props.h4Idx == 0 &&
+              idx == 2 && (
+                <div className={classes.trafficMapImg}>
+                  <Image src={trafficImages[10]} />
+                  <Image src={trafficImages[11]} />
+                </div>
+              )}
+            {props.tag == "traffic" &&
+              props.h3Idx == 2 &&
+              props.h4Idx == 0 &&
+              idx == 3 && <Image src={trafficImages[12]} />}
+            {props.tag == "traffic" &&
+              props.h3Idx == 2 &&
+              props.h4Idx == 0 &&
+              idx == 4 && <Image src={trafficImages[13]} />}
+            {props.tag == "traffic" &&
+              props.h3Idx == 2 &&
+              props.h4Idx == 1 &&
+              idx == 1 && <Image src={trafficImages[14]} />}
+            {props.tag == "traffic" &&
+              props.h3Idx == 2 &&
+              props.h4Idx == 1 &&
+              idx == 2 && <Image src={trafficImages[15]} />}
             <p key={idx}>{d}</p>
           </Fragment>
         ))}
@@ -69,6 +98,30 @@ const H4Contents = (props) => (
         props.h4
       )}
     </h4>
+    {props.tag == "culture" && props.h3Idx == 0 && (
+      <Image src={cultureImages[props.h4Idx]} />
+    )}
+    {props.tag == "history" && props.h3Idx == 1 && (
+      <Image src={historyImages[props.h4Idx]} />
+    )}
+    {props.tag == "traffic" && props.h3Idx == 0 && props.h4Idx == 0 && (
+      <div className={classes.jobHotelImg}>
+        {trafficImages.slice(0, 2).map((d) => (
+          <Image src={d} />
+        ))}
+      </div>
+    )}
+    {props.tag == "traffic" && props.h3Idx == 0 && props.h4Idx == 1 && (
+      <div className={classes.jobHotelImg}>
+        {trafficImages.slice(2, 4).map((d) => (
+          <Image src={d} />
+        ))}
+      </div>
+    )}
+    {props.tag == "traffic" &&
+      props.h3Idx == 0 &&
+      props.h4Idx != 1 &&
+      props.h4Idx != 0 && <Image src={trafficImages[props.h4Idx + 2]} />}
     {props.tag == "job" && props.h3Idx == 2 && props.h4Idx == 0 && (
       <div className={classes.jobSchoolImg}>
         {props.jobImg.slice(0, 3).map((d) => (
@@ -83,11 +136,19 @@ const H4Contents = (props) => (
         ))}
       </div>
     )}
+    {props.tag == "job" && props.h3Idx == 2 && props.h4Idx == 3 && (
+      <Image src={props.jobImg[5]} />
+    )}
     {props.tag == "job" && props.h3Idx == 1 && props.jobImg && (
       <Image src={props.jobImg} />
     )}
     {Array.isArray(props.p) ? (
-      <PList p={props.p} />
+      <PList
+        p={props.p}
+        h3Idx={props.h3Idx}
+        tag={props.tag}
+        h4Idx={props.h4Idx}
+      />
     ) : (
       <Fragment>
         <p>{props.p}</p>
@@ -142,7 +203,7 @@ const HasH4Content = (props) => {
             p={pData[h4Idx]}
             jobImg={
               (props.tag == "job" && props.h3Idx == 1 && jobImages[h4Idx]) ||
-              (props.tag == "job" && props.h3Idx == 2 && jobImages.slice(5, 10))
+              (props.tag == "job" && props.h3Idx == 2 && jobImages.slice(5, 11))
             }
             h4Link={h4LinkData && h4LinkData[h4Idx]}
             tag={props.tag}

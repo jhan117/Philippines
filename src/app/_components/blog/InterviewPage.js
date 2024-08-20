@@ -11,7 +11,7 @@ const InterviewPage = (props) => {
           <div>
             {props.data.answers &&
               props.data.answers[idx].map((a, aIdx) =>
-                idx == 1 && aIdx == 2 ? (
+                idx == 1 && aIdx == 2 && props.data.tagEng == "education" ? (
                   <p>
                     <i>{a}</i>
                   </p>

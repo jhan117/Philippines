@@ -40,3 +40,8 @@
 .jobHotelImg img {
   width: 50%;
 }
+
+.trafficMapImg {
+  display: flex;
+  flex-direction: column;
+}

@@ -14,7 +14,7 @@ const page = () => {
       <hr />
       {historyH3Data.map((d, h3Idx) =>
         d.h4 ? (
-          <HasH4Content data={d} h3Idx={h3Idx} />
+          <HasH4Content data={d} h3Idx={h3Idx} tag="history" />
         ) : (
           <NotHasH4Content data={d} h3Idx={h3Idx} />
         )
