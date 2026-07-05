@@ -162,12 +162,12 @@ const DetailSec = ({ title, items }) => {
             text={item["text"]}
             topImgs={item["topImgs"]}
             bottomImgs={item["bottomImgs"]}
-            // jobImg={
-            //   (props.tag == "job" && props.h3Idx == 1 && jobImages[h4Idx]) ||
-            //   (props.tag == "job" && props.h3Idx == 2 && jobImages.slice(5, 11))
-            // }
-            // h4Link={h4LinkData && h4LinkData[h4Idx]}
-            // tag={props.tag}
+          // jobImg={
+          //   (props.tag == "job" && props.h3Idx == 1 && jobImages[h4Idx]) ||
+          //   (props.tag == "job" && props.h3Idx == 2 && jobImages.slice(5, 11))
+          // }
+          // h4Link={h4LinkData && h4LinkData[h4Idx]}
+          // tag={props.tag}
           />
         </ul>
       ))}
@@ -256,4 +256,151 @@ const MainSec = ({ section }) =>
     <DetailSec title={section.title} items={section.items} />
   );
 
-export { IntroOutroSec, MainSec, BasicSec, DetailSec, DetailedParagraphs };
+
+// 기존 페이지들 호환을 위한 컴포넌트 정의
+const TextSection = IntroOutroSec;
+const PList = DetailedParagraphs;
+const H4Contents = (props) => (
+  <li className={classes.h4Section}>
+    <h4>
+      {props.h4Link ? (
+        <a href={props.h4Link} target="_blank" rel="noopener noreferrer">
+          {props.h4}
+        </a>
+      ) : (
+        props.h4
+      )}
+    </h4>
+    {props.tag == "culture" && props.h3Idx == 0 && (
+      <Image src={cultureImages[props.h4Idx]} alt="culture" />
+    )}
+    {props.tag == "history" && props.h3Idx == 1 && (
+      <Image src={historyImages[props.h4Idx]} alt="history" />
+    )}
+    {props.tag == "traffic" && props.h3Idx == 0 && props.h4Idx == 0 && (
+      <div className={classes.jobHotelImg}>
+        {trafficImages.slice(0, 2).map((d, i) => (
+          <Image src={d} key={i} alt="traffic" />
+        ))}
+      </div>
+    )}
+    {props.tag == "traffic" && props.h3Idx == 0 && props.h4Idx == 1 && (
+      <div className={classes.jobHotelImg}>
+        {trafficImages.slice(2, 4).map((d, i) => (
+          <Image src={d} key={i} alt="traffic" />
+        ))}
+      </div>
+    )}
+    {props.tag == "traffic" &&
+      props.h3Idx == 0 &&
+      props.h4Idx != 1 &&
+      props.h4Idx != 0 && <Image src={trafficImages[props.h4Idx + 2]} alt="traffic" />}
+    {props.tag == "job" && props.h3Idx == 2 && props.h4Idx == 0 && (
+      <div className={classes.jobSchoolImg}>
+        {props.jobImg.slice(0, 3).map((d, i) => (
+          <Image src={d} key={i} alt="job" />
+        ))}
+      </div>
+    )}
+    {props.tag == "job" && props.h3Idx == 2 && props.h4Idx == 1 && (
+      <div className={classes.jobHotelImg}>
+        {props.jobImg.slice(3, 5).map((d, i) => (
+          <Image src={d} key={i} alt="job" />
+        ))}
+      </div>
+    )}
+    {props.tag == "job" && props.h3Idx == 2 && props.h4Idx == 3 && (
+      <Image src={props.jobImg[5]} alt="job" />
+    )}
+    {props.tag == "job" && props.h3Idx == 1 && props.jobImg && (
+      <Image src={props.jobImg} alt="job" />
+    )}
+    {Array.isArray(props.p) ? (
+      <PList
+        p={props.p}
+        h3Idx={props.h3Idx}
+        tag={props.tag}
+        h4Idx={props.h4Idx}
+      />
+    ) : (
+      <Fragment>
+        <p>{props.p}</p>
+        {props.tag == "education" && props.h3Idx == 0 && props.h4Idx == 0 && (
+          <Image src={educationImages[0]} alt="education" />
+        )}
+        {props.tag == "education" && props.h3Idx == 1 && props.h4Idx == 1 && (
+          <Image src={educationImages[1]} alt="education" />
+        )}
+      </Fragment>
+    )}
+  </li>
+);
+const HasH4Content = (props) => {
+  const {
+    h3: h3Data,
+    h4: h4Data,
+    p: pData,
+    len: lenData,
+    intro: introData,
+    h4Link: h4LinkData,
+  } = props.data;
+  return (
+    <H3Section title={h3Data}>
+      {introData && <p>{introData}</p>}
+      {props.tag == "weather" && props.h3Idx == 1 && (
+        <Image src={weatherImages[1]} alt="weather" />
+      )}
+      {[...Array(lenData)].map((_, h4Idx) => (
+        <ul className={classes.h4Con} key={h4Idx}>
+          <H4Contents
+            h4Idx={h4Idx}
+            h3Idx={props.h3Idx}
+            h4={h4Data[h4Idx]}
+            p={pData[h4Idx]}
+            jobImg={
+              (props.tag == "job" && props.h3Idx == 1 && jobImages[h4Idx]) ||
+              (props.tag == "job" && props.h3Idx == 2 && jobImages.slice(5, 11))
+            }
+            h4Link={h4LinkData && h4LinkData[h4Idx]}
+            tag={props.tag}
+          />
+        </ul>
+      ))}
+    </H3Section>
+  );
+};
+const NotHasH4Content = (props) => {
+  const { h3: h3Data, p: pData } = props.data;
+  return (
+    <H3Section title={h3Data}>
+      {props.tag == "wealth_gap" && props.h3Idx == 0 && (
+        <Image src={wealthGapImages[0]} alt="wealth_gap" />
+      )}
+      {Array.isArray(pData) ? (
+        pData.map((pd, idx) => (
+          <PList
+            h3Idx={props.h3Idx}
+            key={idx}
+            p={pd}
+            tag={props.tag}
+            pIdx={idx}
+          />
+        ))
+      ) : (
+        <p>{pData}</p>
+      )}
+    </H3Section>
+  );
+};
+
+export {
+  IntroOutroSec,
+  MainSec,
+  BasicSec,
+  DetailSec,
+  DetailedParagraphs,
+  TextSection,
+  PList,
+  HasH4Content,
+  NotHasH4Content,
+};

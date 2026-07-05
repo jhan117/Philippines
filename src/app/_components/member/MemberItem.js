@@ -15,7 +15,7 @@ const MemberItem = (props) => {
   return (
     <motion.div className={classes.memberItem} variants={item}>
       <Image
-        src={`https://github.com/user-attachments/assets/${props.src}`}
+        src={props.src}
         width={100}
         height={100}
         alt={props.name}

@@ -7,8 +7,9 @@ export function generateStaticParams() {
   return interviewData.map((v) => ({ interviewId: v.tagEng }));
 }
 
-export default function page({ params }) {
-  const data = interviewData.find((d) => d.tagEng == params.interviewId);
+export default async function page({ params }) {
+  const resolvedParams = await params;
+  const data = interviewData.find((d) => d.tagEng == resolvedParams.interviewId);
 
   return (
     <BlogHeader header={data.tagKor} writer={data.writer}>

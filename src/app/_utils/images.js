@@ -5,6 +5,11 @@ import wc4 from "@/app/_assets/waterQualityImgs/wc4.png";
 import wc5 from "@/app/_assets/waterQualityImgs/wc5.png";
 import wc6 from "@/app/_assets/waterQualityImgs/wc6.png";
 
+import hk1 from "@/app/_assets/historyImgs/arch.png";
+import hk2 from "@/app/_assets/historyImgs/art.png";
+import hk3 from "@/app/_assets/historyImgs/fest.png";
+import hk4 from "@/app/_assets/historyImgs/lang.png";
+
 import wk1 from "@/app/_assets/weatherImgs/wk1.png";
 import wk2 from "@/app/_assets/weatherImgs/wk2.png";
 
@@ -75,6 +80,7 @@ const trafficImages = [
   tk16,
 ];
 const cultureImages = [cs1, cs2, cs3, cs4, cs5, cs6, cs7, cs8];
+const historyImages = [hk1, hk2, hk3, hk4];
 
 export {
   waterImages,
@@ -84,4 +90,5 @@ export {
   wealthGapImages,
   trafficImages,
   cultureImages,
+  historyImages,
 };
