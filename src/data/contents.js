@@ -1,8 +1,3 @@
-import arch from "@/app/_assets/historyImgs/arch.png";
-import lang from "@/app/_assets/historyImgs/lang.png";
-import fest from "@/app/_assets/historyImgs/fest.png";
-import art from "@/app/_assets/historyImgs/art.png";
-
 // 역사
 const histData = {
   title: "필리핀의 역사",
@@ -33,22 +28,22 @@ const histData = {
         {
           sub: "스페인식 건축",
           text: "식민지 시대 동안 세워진 교회와 수도원은 스페인의 건축양식을 따르며 이러한 건축물이 남아 있습니다. 바로크양식의 산 아구스틴 교회와 산토 토마스 대학은 대표적 스페인식 건물의 예시입니다. 건축물은 필리핀의 역사와 문화를 이해하는 데 중요한 자료가 되며 독특한 문화적 정체성을 보여주는 중요한 유산이 됩니다.",
-          topImgs: arch,
+          topImgs: "/images/historyImgs/arch.png",
         },
         {
           sub: "필리핀어",
           text: "스페인 지배 당시 스페인어는 필리핀의 공용어였기에 필리핀어(타갈로그어)에 큰 영향을 미쳤습니다. 현재 필리핀어에는 많은 스페인어 단어와 표현이 포함되어 있으며, 이는 필리핀어의 독특한 특징이 되었고 언어적 유산 중 하나로 볼 수 있습니다. 현재 필리핀어는 영어와 함께 필리핀의 공식 언어로 사용되며, 스페인어는 주로 학문적 연구나 역사적 자료에서 사용됩니다.",
-          topImgs: lang,
+          topImgs: "/images/historyImgs/lang.png",
         },
         {
           sub: "전통과 축제",
           text: "스페인의 식민 지배 시기에 형성된 필리핀의 대표적인 축제인 시눌로그, 피에스타, 그리고 미사 데 가요가 있습니다. 이러한 축제들은 필리핀 사람들에게 중요한 문화적 행사로, 많은 사람들이 이를 기념하고 즐깁니다. 크리스마스와 같은 축제는 식민지의 유산으로 볼 수 있으며, 문화적 자긍심을 고취하고 연대감을 강화하는 역할을 합니다.",
-          topImgs: fest,
+          topImgs: "/images/historyImgs/fest.png",
         },
         {
           sub: "예술과 문학",
           text: "많은 예술가와 작가들이 스페인의 영향을 받아 작품을 창작하였으며 이는 필리핀의 예술과 문학에 중요한 기여를 하였습니다. 호세 리살과 같은 작가는 스페인어로 작품을 썼으며 독립운동에 큰 영향을 미쳤습니다. 많은 작품에는 필리핀의 식민지 시대의 흔적이 남아있으며, 필리핀의 스페인식 예술과 문학은 필리핀 국민의 창의성과 문화적 표현의 중요성을 강조합니다.",
-          topImgs: art,
+          topImgs: "/images/historyImgs/art.png",
         },
       ],
     },

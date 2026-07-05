@@ -6,7 +6,7 @@ import Image from "next/image";
 
 import DropdownItem from "./DropdownItem";
 import Backdrop from "../ui/Backdrop";
-import DROP_DOWN from "@/app/_assets/icons/drop-down.svg";
+const DROP_DOWN = "/images/icons/drop-down.svg";
 
 const Dropdown = (props) => {
   const [toggle, setToggle] = useState(false);

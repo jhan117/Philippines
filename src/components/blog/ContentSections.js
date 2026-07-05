@@ -6,15 +6,13 @@ import { Fragment } from "react";
 
 import classes from "./ContentSections.module.css";
 
-import {
-  educationImages,
-  weatherImages,
-  jobImages,
-  wealthGapImages,
-  historyImages,
-  trafficImages,
-  cultureImages,
-} from "@/app/_utils/images";
+const educationImages = ["/images/educationImgs/es1.png", "/images/educationImgs/es2.jpg"];
+const weatherImages = ["/images/weatherImgs/wk1.png", "/images/weatherImgs/wk2.png"];
+const jobImages = ["/images/jobImgs/js1.jpg", "/images/jobImgs/js2.jpg", "/images/jobImgs/js3.jpg", "/images/jobImgs/js4.jpg", "/images/jobImgs/js5.jpg", "/images/jobImgs/js6.jpg", "/images/jobImgs/js7.jpg", "/images/jobImgs/js8.jpg", "/images/jobImgs/js9.jpg", "/images/jobImgs/js10.jpg"];
+const wealthGapImages = ["/images/wealthGapImgs/wk1.jpg", "/images/wealthGapImgs/wk2.jpg"];
+const historyImages = ["/images/historyImgs/arch.png", "/images/historyImgs/art.png", "/images/historyImgs/fest.png", "/images/historyImgs/lang.png"];
+const trafficImages = ["/images/trafficImgs/tk1.jpg", "/images/trafficImgs/tk2.jpg", "/images/trafficImgs/tk3.jpg", "/images/trafficImgs/tk4.jpg", "/images/trafficImgs/tk5.jpg", "/images/trafficImgs/tk6.jpg", "/images/trafficImgs/tk7.jpg", "/images/trafficImgs/tk8.jpg", "/images/trafficImgs/tk9.png", "/images/trafficImgs/tk10.png", "/images/trafficImgs/tk11.png", "/images/trafficImgs/tk12.png", "/images/trafficImgs/tk13.png", "/images/trafficImgs/tk14.png", "/images/trafficImgs/tk15.png", "/images/trafficImgs/tk16.png"];
+const cultureImages = ["/images/cultureImgs/cs1.jpg", "/images/cultureImgs/cs2.jpg", "/images/cultureImgs/cs3.jpg", "/images/cultureImgs/cs4.jpg", "/images/cultureImgs/cs5.jpg", "/images/cultureImgs/cs6.jpg", "/images/cultureImgs/cs7.jpg", "/images/cultureImgs/cs8.jpg"];
 
 const IntroOutroSec = ({ content }) => (
   <section>
@@ -40,7 +38,7 @@ const H3Section = ({ title, children }) => (
 const BasicSec = ({ title, text }) => (
   <H3Section title={title}>
     {/* {props.tag == "wealth_gap" && props.h3Idx == 0 && (
-      <Image src={wealthGapImages[0]} />
+      <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={wealthGapImages[0]} />
     )} */}
     {/* {Array.isArray(pData) ? (
       pData.map((pd, idx) => (
@@ -72,45 +70,45 @@ const H4Section = ({ subTitle, text, topImgs, bottomImgs }) => (
       {subTitle}
     </h4>
     {/* {props.tag == "culture" && props.h3Idx == 0 && (
-      <Image src={cultureImages[props.h4Idx]} />
+      <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={cultureImages[props.h4Idx]} />
     )}
     {props.tag == "traffic" && props.h3Idx == 0 && props.h4Idx == 0 && (
       <div className={classes.jobHotelImg}>
         {trafficImages.slice(0, 2).map((d) => (
-          <Image src={d} />
+          <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={d} />
         ))}
       </div>
     )}
     {props.tag == "traffic" && props.h3Idx == 0 && props.h4Idx == 1 && (
       <div className={classes.jobHotelImg}>
         {trafficImages.slice(2, 4).map((d) => (
-          <Image src={d} />
+          <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={d} />
         ))}
       </div>
     )}
     {props.tag == "traffic" &&
       props.h3Idx == 0 &&
       props.h4Idx != 1 &&
-      props.h4Idx != 0 && <Image src={trafficImages[props.h4Idx + 2]} />}
+      props.h4Idx != 0 && <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={trafficImages[props.h4Idx + 2]} />}
     {props.tag == "job" && props.h3Idx == 2 && props.h4Idx == 0 && (
       <div className={classes.jobSchoolImg}>
         {props.jobImg.slice(0, 3).map((d) => (
-          <Image src={d} />
+          <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={d} />
         ))}
       </div>
     )}
     {props.tag == "job" && props.h3Idx == 2 && props.h4Idx == 1 && (
       <div className={classes.jobHotelImg}>
         {props.jobImg.slice(3, 5).map((d) => (
-          <Image src={d} />
+          <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={d} />
         ))}
       </div>
     )}
     {props.tag == "job" && props.h3Idx == 2 && props.h4Idx == 3 && (
-      <Image src={props.jobImg[5]} />
+      <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={props.jobImg[5]} />
     )}
     {props.tag == "job" && props.h3Idx == 1 && props.jobImg && (
-      <Image src={props.jobImg} />
+      <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={props.jobImg} />
     )}
     {Array.isArray(props.p) ? (
       <DetailedParagraphs
@@ -123,17 +121,17 @@ const H4Section = ({ subTitle, text, topImgs, bottomImgs }) => (
       <Fragment>
         <p>{props.p}</p>
         {props.tag == "education" && props.h3Idx == 0 && props.h4Idx == 0 && (
-          <Image src={educationImages[0]} />
+          <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={educationImages[0]} />
         )}
         {props.tag == "education" && props.h3Idx == 1 && props.h4Idx == 1 && (
-          <Image src={educationImages[1]} />
+          <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={educationImages[1]} />
         )}
       </Fragment>
     )} */}
     <Fragment>
-      {topImgs && <Image src={topImgs} alt="image" />}
+      {topImgs && <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={topImgs} alt="image" />}
       <p>{text}</p>
-      {bottomImgs && <Image src={bottomImgs} alt="image" />}
+      {bottomImgs && <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={bottomImgs} alt="image" />}
     </Fragment>
   </li>
 );
@@ -152,7 +150,7 @@ const DetailSec = ({ title, items }) => {
     <H3Section title={title}>
       {/* {introData && <p>{introData}</p>}
       {props.tag == "weather" && props.h3Idx == 1 && (
-        <Image src={weatherImages[1]} />
+        <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={weatherImages[1]} />
       )} */}
       {items.map((item, idx) => (
         <ul key={idx} className={classes.h4Con}>
@@ -190,18 +188,18 @@ const DetailedParagraphs = (props) => (
     {props.p.length > 2 ? (
       <div className={classes.manyP}>
         {props.p.map((d, idx) => (
-          <Fragment>
+          <Fragment key={idx}>
             {props.tag == "wealth_gap" &&
               props.h3Idx == 1 &&
               props.pIdx == 0 &&
-              idx == 4 && <Image src={wealthGapImages[1]} />}
+              idx == 4 && <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={wealthGapImages[1]} />}
             {props.tag == "traffic" &&
               props.h3Idx == 2 &&
               props.h4Idx == 0 &&
               idx == 0 && (
                 <div className={classes.jobHotelImg}>
-                  <Image src={trafficImages[8]} />
-                  <Image src={trafficImages[9]} />
+                  <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={trafficImages[8]} />
+                  <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={trafficImages[9]} />
                 </div>
               )}
             {props.tag == "traffic" &&
@@ -209,26 +207,26 @@ const DetailedParagraphs = (props) => (
               props.h4Idx == 0 &&
               idx == 2 && (
                 <div className={classes.trafficMapImg}>
-                  <Image src={trafficImages[10]} />
-                  <Image src={trafficImages[11]} />
+                  <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={trafficImages[10]} />
+                  <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={trafficImages[11]} />
                 </div>
               )}
             {props.tag == "traffic" &&
               props.h3Idx == 2 &&
               props.h4Idx == 0 &&
-              idx == 3 && <Image src={trafficImages[12]} />}
+              idx == 3 && <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={trafficImages[12]} />}
             {props.tag == "traffic" &&
               props.h3Idx == 2 &&
               props.h4Idx == 0 &&
-              idx == 4 && <Image src={trafficImages[13]} />}
+              idx == 4 && <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={trafficImages[13]} />}
             {props.tag == "traffic" &&
               props.h3Idx == 2 &&
               props.h4Idx == 1 &&
-              idx == 1 && <Image src={trafficImages[14]} />}
+              idx == 1 && <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={trafficImages[14]} />}
             {props.tag == "traffic" &&
               props.h3Idx == 2 &&
               props.h4Idx == 1 &&
-              idx == 2 && <Image src={trafficImages[15]} />}
+              idx == 2 && <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={trafficImages[15]} />}
             <p key={idx}>{d}</p>
           </Fragment>
         ))}
@@ -237,7 +235,7 @@ const DetailedParagraphs = (props) => (
       <Fragment>
         <p>{props.p[0]}</p>
         {props.tag == "weather" && props.pIdx == 0 && (
-          <Image src={weatherImages[0]} />
+          <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={weatherImages[0]} />
         )}
         {Array.isArray(props.p[1]) ? (
           <ParagraphList data={props.p[1]} />
@@ -272,48 +270,48 @@ const H4Contents = (props) => (
       )}
     </h4>
     {props.tag == "culture" && props.h3Idx == 0 && (
-      <Image src={cultureImages[props.h4Idx]} alt="culture" />
+      <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={cultureImages[props.h4Idx]} alt="culture" />
     )}
     {props.tag == "history" && props.h3Idx == 1 && (
-      <Image src={historyImages[props.h4Idx]} alt="history" />
+      <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={historyImages[props.h4Idx]} alt="history" />
     )}
     {props.tag == "traffic" && props.h3Idx == 0 && props.h4Idx == 0 && (
       <div className={classes.jobHotelImg}>
         {trafficImages.slice(0, 2).map((d, i) => (
-          <Image src={d} key={i} alt="traffic" />
+          <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={d} key={i} alt="traffic" />
         ))}
       </div>
     )}
     {props.tag == "traffic" && props.h3Idx == 0 && props.h4Idx == 1 && (
       <div className={classes.jobHotelImg}>
         {trafficImages.slice(2, 4).map((d, i) => (
-          <Image src={d} key={i} alt="traffic" />
+          <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={d} key={i} alt="traffic" />
         ))}
       </div>
     )}
     {props.tag == "traffic" &&
       props.h3Idx == 0 &&
       props.h4Idx != 1 &&
-      props.h4Idx != 0 && <Image src={trafficImages[props.h4Idx + 2]} alt="traffic" />}
+      props.h4Idx != 0 && <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={trafficImages[props.h4Idx + 2]} alt="traffic" />}
     {props.tag == "job" && props.h3Idx == 2 && props.h4Idx == 0 && (
       <div className={classes.jobSchoolImg}>
         {props.jobImg.slice(0, 3).map((d, i) => (
-          <Image src={d} key={i} alt="job" />
+          <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={d} key={i} alt="job" />
         ))}
       </div>
     )}
     {props.tag == "job" && props.h3Idx == 2 && props.h4Idx == 1 && (
       <div className={classes.jobHotelImg}>
         {props.jobImg.slice(3, 5).map((d, i) => (
-          <Image src={d} key={i} alt="job" />
+          <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={d} key={i} alt="job" />
         ))}
       </div>
     )}
-    {props.tag == "job" && props.h3Idx == 2 && props.h4Idx == 3 && (
-      <Image src={props.jobImg[5]} alt="job" />
+    {props.tag == "job" && props.h3Idx == 2 && props.h4Idx == 3 && props.jobImg[5] && (
+      <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={props.jobImg[5]} alt="job" />
     )}
     {props.tag == "job" && props.h3Idx == 1 && props.jobImg && (
-      <Image src={props.jobImg} alt="job" />
+      <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={props.jobImg} alt="job" />
     )}
     {Array.isArray(props.p) ? (
       <PList
@@ -326,10 +324,10 @@ const H4Contents = (props) => (
       <Fragment>
         <p>{props.p}</p>
         {props.tag == "education" && props.h3Idx == 0 && props.h4Idx == 0 && (
-          <Image src={educationImages[0]} alt="education" />
+          <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={educationImages[0]} alt="education" />
         )}
         {props.tag == "education" && props.h3Idx == 1 && props.h4Idx == 1 && (
-          <Image src={educationImages[1]} alt="education" />
+          <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={educationImages[1]} alt="education" />
         )}
       </Fragment>
     )}
@@ -348,7 +346,7 @@ const HasH4Content = (props) => {
     <H3Section title={h3Data}>
       {introData && <p>{introData}</p>}
       {props.tag == "weather" && props.h3Idx == 1 && (
-        <Image src={weatherImages[1]} alt="weather" />
+        <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={weatherImages[1]} alt="weather" />
       )}
       {[...Array(lenData)].map((_, h4Idx) => (
         <ul className={classes.h4Con} key={h4Idx}>
@@ -374,7 +372,7 @@ const NotHasH4Content = (props) => {
   return (
     <H3Section title={h3Data}>
       {props.tag == "wealth_gap" && props.h3Idx == 0 && (
-        <Image src={wealthGapImages[0]} alt="wealth_gap" />
+        <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={wealthGapImages[0]} alt="wealth_gap" />
       )}
       {Array.isArray(pData) ? (
         pData.map((pd, idx) => (

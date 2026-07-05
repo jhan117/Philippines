@@ -1,4 +1,4 @@
-import Back from "../_components/ui/Back";
+import Back from "@/components/ui/Back";
 
 const layout = ({ children }) => {
   return <Back>{children}</Back>;

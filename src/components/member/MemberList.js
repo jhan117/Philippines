@@ -1,5 +1,5 @@
 import MemberItem from "./MemberItem";
-import { memberList } from "@/app/_utils/data";
+import { memberList } from "@/data/siteData";
 
 const MemberList = () => {
   return (

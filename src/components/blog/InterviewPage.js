@@ -4,7 +4,7 @@ const InterviewPage = (props) => {
   return (
     <div className={classes.interviewCon}>
       {[...Array(props.data.len)].map((_, idx) => (
-        <div className={classes.questionCon}>
+        <div key={idx} className={classes.questionCon}>
           <h4>
             Q{idx + 1}: {props.data.questions[idx]}
           </h4>
@@ -12,11 +12,11 @@ const InterviewPage = (props) => {
             {props.data.answers &&
               props.data.answers[idx].map((a, aIdx) =>
                 idx == 1 && aIdx == 2 && props.data.tagEng == "education" ? (
-                  <p>
+                  <p key={aIdx}>
                     <i>{a}</i>
                   </p>
                 ) : (
-                  <p>
+                  <p key={aIdx}>
                     <b>
                       A{idx + 1}
                       {props.data.answers[idx].length != 1 && `-${aIdx + 1}`}:

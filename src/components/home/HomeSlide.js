@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import imgList from "@/app/_utils/imgs";
-import { sequenceList } from "@/app/_utils/data";
+import { sequenceList } from "@/data/siteData";
+
+const imgList = Array.from({ length: 17 }, (_, i) => `/images/philippinesImgs/${i + 1}.jpg`);
 
 
 
@@ -51,6 +52,8 @@ const HomeSlide = () => {
             className="inline-block w-full h-full object-cover object-[center_70%]"
             src={img}
             alt="필리핀 이미지"
+            width={1920}
+            height={1080}
             onContextMenu={(e) => e.preventDefault()}
             loading="eager"
           />

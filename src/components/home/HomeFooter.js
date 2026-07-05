@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 
-import { insList } from "../../_utils/data";
+import { insList } from "@/data/siteData";
 
 import Link from "next/link";
 

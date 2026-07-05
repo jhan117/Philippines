@@ -3,7 +3,7 @@ import Link from "next/link";
 import DropdownList from "../dropdown/DropdownList";
 import LinkItem from "../ui/LinkItem";
 
-import { navList, envList, ecoList } from "@/app/_utils/data";
+import { navList, envList, ecoList } from "@/data/siteData";
 
 const HomeHeader = () => {
   return (

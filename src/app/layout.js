@@ -1,7 +1,7 @@
-import HomeHeader from "./_components/homePage/HomeHeader";
-import HomeFooter from "./_components/homePage/HomeFooter";
+import HomeHeader from "@/components/home/HomeHeader";
+import HomeFooter from "@/components/home/HomeFooter";
 
-import "./layout.css";
+import "./globals.css";
 
 export const metadata = {
   title: "Philippines Insight | 대구대 파란사다리 2조",

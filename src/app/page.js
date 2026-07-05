@@ -2,8 +2,8 @@
 
 import { Fragment } from "react";
 
-import HomeSlide from "./_components/homePage/HomeSlide";
-import MemberList from "./_components/member/MemberList";
+import HomeSlide from "@/components/home/HomeSlide";
+import MemberList from "@/components/member/MemberList";
 
 const HomeMain = () => {
   return (

@@ -2,7 +2,7 @@ import CardItem from "./CardItem";
 
 import classes from "./CardList.module.css";
 
-import { category } from "@/app/_utils/data";
+import { category } from "@/data/siteData";
 
 const CardList = () => {
   return (
