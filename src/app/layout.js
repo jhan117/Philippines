@@ -4,16 +4,16 @@ import HomeFooter from "./_components/homePage/HomeFooter";
 import "./layout.css";
 
 export const metadata = {
-  title: "필리핀 2조 | 다이나믹 웹 매거진",
+  title: "Philippines Insight | 대구대 파란사다리 2조",
   description: "역사, 문화, 경제, 환경 등 필리핀의 모든 것을 한눈에 알아보세요.",
   openGraph: {
-    title: "필리핀 2조 | 다이나믹 웹 매거진",
+    title: "Philippines Insight | 대구대 파란사다리 2조",
     description: "역사, 문화, 경제, 환경 등 필리핀의 모든 것을 한눈에 알아보세요.",
     type: "website",
     locale: "ko_KR",
   },
   icons: {
-    icon: "/Philippines/philippines.png",
+    icon: "/philippines.png",
   },
 };
 

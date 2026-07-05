@@ -9,7 +9,7 @@ const HomeHeader = () => {
   return (
     <header className="sticky top-0 z-50 w-full px-6 py-4 flex justify-between items-center bg-slate-900/80 backdrop-blur-md border-b border-white/10 shadow-sm transition-all duration-300">
       <h1 className="text-2xl font-bold text-white tracking-tight hover:text-primary-500 transition-colors">
-        <Link href="/">필리핀 2조</Link>
+        <Link href="/">Philippines Insight</Link>
       </h1>
       <nav>
         <ul className="flex items-center gap-6">
