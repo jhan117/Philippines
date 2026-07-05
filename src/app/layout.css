@@ -1,61 +1,16 @@
-/* @import "tailwindcss"; */
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+@import "tailwindcss";
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  margin-block-start: 0;
-  margin-block-end: 0;
-  margin-inline-start: 0;
-  margin-inline-end: 0;
-  padding-block-start: 0;
-  padding-block-end: 0;
-  padding-inline-start: 0;
-  padding-inline-end: 0;
-  white-space: pre-wrap;
+@theme {
+  --color-primary-500: #ff7e14;
+  --font-sans: "Noto Sans KR", sans-serif;
 }
 
-html,
-button {
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: 1em;
-}
-
-body {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-button {
-  background: none;
-  color: inherit;
-  border: none;
-  cursor: pointer;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul,
-li {
-  list-style: none;
-}
-
-/* 모바일 전용 */
-h2 {
-  font-size: 1.5em;
-}
-
-h3 {
-  font-size: 1.25em;
-}
-
-h4 {
-  font-size: 1.125em;
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 font-sans min-h-screen flex flex-col antialiased selection:bg-primary-500 selection:text-white;
+  }
+  
+  main {
+    @apply flex-grow w-full flex flex-col items-center;
+  }
 }

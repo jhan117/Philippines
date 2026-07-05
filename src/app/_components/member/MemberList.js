@@ -1,30 +1,13 @@
-import { motion } from "framer-motion";
-
 import MemberItem from "./MemberItem";
-
 import { memberList } from "@/app/_utils/data";
-
-import classes from "./MemberList.module.css";
 
 const MemberList = () => {
   return (
-    <div className={classes.teamIntro}>
-      <motion.h2 initial={{ scale: 0 }} animate={{ rotate: 360, scale: 1 }}>
+    <section className="w-full py-20 px-6 text-center flex flex-col items-center gap-10 bg-slate-50">
+      <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
         조원 소개
-      </motion.h2>
-      <motion.div
-        className={classes.memberCon}
-        variants={{
-          visible: {
-            transition: {
-              delayChildren: 0.1,
-              staggerChildren: 0.3,
-            },
-          },
-        }}
-        initial="hidden"
-        animate="visible"
-      >
+      </h2>
+      <div className="flex flex-wrap justify-center gap-6 max-w-6xl">
         {memberList.map((member) => (
           <MemberItem
             key={member.id}
@@ -41,8 +24,8 @@ const MemberList = () => {
             major={member.major}
           />
         ))}
-      </motion.div>
-    </div>
+      </div>
+    </section>
   );
 };
 

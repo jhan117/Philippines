@@ -1,20 +1,10 @@
 import Image from "next/image";
-import { motion } from "framer-motion";
-
-import classes from "./MemberItem.module.css";
 
 const MemberItem = (props) => {
-  const item = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-    },
-  };
-
   return (
-    <motion.div className={classes.memberItem} variants={item}>
+    <div className="w-52 bg-white p-6 border border-slate-100 rounded-2xl text-center flex flex-col items-center gap-4 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-300 group">
       <Image
+        className="rounded-full w-24 h-24 object-cover shadow-inner ring-4 ring-slate-50 group-hover:ring-primary-100 transition-colors duration-300"
         src={props.src}
         width={100}
         height={100}
@@ -22,13 +12,13 @@ const MemberItem = (props) => {
         onContextMenu={(e) => e.preventDefault()}
         loading="eager"
       />
-      <h3>{props.name}</h3>
-      <div className={classes.info}>
-        <p>{props.role}</p>
+      <h3 className="text-lg font-bold text-slate-800 mt-2">{props.name}</h3>
+      <div className="flex flex-col gap-1.5 h-[6.5rem] justify-center text-sm text-slate-500 font-medium">
+        <p className="text-primary-500 font-bold tracking-wider text-xs">{props.role}</p>
         <p>{props.univ}</p>
-        <p>{props.major}</p>
+        <p className="whitespace-pre-wrap text-xs">{props.major}</p>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

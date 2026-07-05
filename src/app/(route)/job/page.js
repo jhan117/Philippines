@@ -12,7 +12,7 @@ const page = () => {
       <TextSection content={jobData[0]} />
       <hr />
       {jobH3Data.map((d, h3Idx) => (
-        <HasH4Content data={d} h3Idx={h3Idx} tag="job" />
+        <HasH4Content key={h3Idx} data={d} h3Idx={h3Idx} tag="job" />
       ))}
     </BlogHeader>
   );
