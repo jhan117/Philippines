@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { TypeAnimation } from "react-type-animation";
 import { sequenceList } from "@/data/siteData";
 
 const imgList = Array.from({ length: 17 }, (_, i) => `/images/philippinesImgs/${i + 1}.jpg`);
@@ -10,7 +11,6 @@ const delay = 2500;
 
 const HomeSlide = () => {
   const [index, setIndex] = useState(0);
-  const [textIndex, setTextIndex] = useState(0);
   const timeoutRef = useRef(null);
 
   const resetTimeout = () => {
@@ -33,30 +33,36 @@ const HomeSlide = () => {
     };
   }, [index]);
 
-  useEffect(() => {
-    const textInterval = setInterval(() => {
-      setTextIndex((prev) => (prev + 2 >= sequenceList.length ? 0 : prev + 2));
-    }, 2000);
-    return () => clearInterval(textInterval);
-  }, []);
+
 
   return (
-    <div className="relative w-full overflow-hidden text-center text-white bg-slate-900 aspect-[16/8] md:aspect-[16/6] min-h-[300px] shadow-2xl">
+    <div className="relative w-full overflow-hidden text-center text-white bg-slate-900 h-[50vh] md:h-[65vh] lg:h-[80vh] min-h-[400px] shadow-2xl">
       <div
         className="w-full h-full whitespace-nowrap transition-transform duration-1000 ease-in-out"
         style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
       >
         {imgList.map((img, idx) => (
-          <Image
-            key={idx}
-            className="inline-block w-full h-full object-cover object-[center_70%]"
-            src={img}
-            alt="필리핀 이미지"
-            width={1920}
-            height={1080}
-            onContextMenu={(e) => e.preventDefault()}
-            loading="eager"
-          />
+          <div key={idx} className="inline-block w-full h-full relative">
+            {/* Blurred Background to fill wide screens */}
+            <Image
+              className="absolute inset-0 w-full h-full object-cover blur-2xl opacity-60 scale-110"
+              src={img}
+              alt="필리핀 배경"
+              width={1920}
+              height={1080}
+              priority={idx === 0}
+            />
+            {/* Uncropped Foreground Image */}
+            <Image
+              className="relative w-full h-full object-contain drop-shadow-2xl"
+              src={img}
+              alt="필리핀 이미지"
+              width={1920}
+              height={1080}
+              onContextMenu={(e) => e.preventDefault()}
+              loading="eager"
+            />
+          </div>
         ))}
       </div>
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-wrap justify-center gap-3 w-full z-20">
@@ -77,8 +83,14 @@ const HomeSlide = () => {
       </p>
 
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full px-8 z-20 drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)] pointer-events-none">
-        <h2 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight text-white transition-opacity duration-1000 ease-in-out">
-          {sequenceList[textIndex]}
+        <h2 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight text-white drop-shadow-2xl">
+          <TypeAnimation
+            sequence={sequenceList}
+            wrapper="span"
+            speed={50}
+            repeat={Infinity}
+            cursor={true}
+          />
         </h2>
       </div>
     </div>
