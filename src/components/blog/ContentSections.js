@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Fragment } from "react";
 
-import classes from "./ContentSections.module.css";
 
 const educationImages = ["/images/educationImgs/es1.png", "/images/educationImgs/es2.jpg"];
 const weatherImages = ["/images/weatherImgs/wk1.png", "/images/weatherImgs/wk2.png"];
@@ -17,7 +16,7 @@ const cultureImages = ["/images/cultureImgs/cs1.jpg", "/images/cultureImgs/cs2.j
 const IntroOutroSec = ({ content }) => (
   <section>
     {Array.isArray(content) ? (
-      <div className={classes.multipleParagraphs}>
+      <div className="flex flex-col gap-4">
         {content.map((d, idx) => (
           <p key={idx}>{d}</p>
         ))}
@@ -29,8 +28,8 @@ const IntroOutroSec = ({ content }) => (
 );
 
 const H3Section = ({ title, children }) => (
-  <section className={classes.h3Section}>
-    <h3>{title}</h3>
+  <section className="flex flex-col gap-4 my-4">
+    <h3 className="text-2xl font-bold border-b border-primary-500/20 pb-2 mb-2 text-primary-500">{title}</h3>
     {children}
   </section>
 );
@@ -58,8 +57,8 @@ const BasicSec = ({ title, text }) => (
 );
 
 const H4Section = ({ subTitle, text, topImgs, bottomImgs }) => (
-  <li className={classes.h4Section}>
-    <h4>
+  <li className="flex flex-col gap-2 my-2">
+    <h4 className="text-lg font-semibold text-slate-800">
       {/* {props.h4Link ? (
         <Link href={props.h4Link} target="_blank">
           {props.h4}
@@ -153,7 +152,7 @@ const DetailSec = ({ title, items }) => {
         <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={weatherImages[1]} />
       )} */}
       {items.map((item, idx) => (
-        <ul key={idx} className={classes.h4Con}>
+        <ul key={idx} className="flex flex-col gap-4 ml-4">
           <H4Section
             key={idx}
             subTitle={item["sub"]}
@@ -176,7 +175,7 @@ const DetailSec = ({ title, items }) => {
 const ParagraphList = (props) => (
   <ul>
     {props.data.map((d, idx) => (
-      <li className={classes.addList} key={idx}>
+      <li className="text-sm text-slate-700 ml-6 list-disc" key={idx}>
         {d}
       </li>
     ))}
@@ -184,9 +183,9 @@ const ParagraphList = (props) => (
 );
 
 const DetailedParagraphs = (props) => (
-  <div className={classes.listCon}>
+  <div className="flex flex-col gap-2 text-slate-700 leading-relaxed">
     {props.p.length > 2 ? (
-      <div className={classes.manyP}>
+      <div className="flex flex-col gap-4">
         {props.p.map((d, idx) => (
           <Fragment key={idx}>
             {props.tag == "wealth_gap" &&
@@ -197,16 +196,16 @@ const DetailedParagraphs = (props) => (
               props.h3Idx == 2 &&
               props.h4Idx == 0 &&
               idx == 0 && (
-                <div className={classes.jobHotelImg}>
-                  <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={trafficImages[8]} />
-                  <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={trafficImages[9]} />
+                <div className="flex flex-row gap-4 items-center w-full">
+                  <Image alt="image" width={1920} height={1080} className="w-1/2 h-auto object-contain rounded-xl my-4 drop-shadow-md" src={trafficImages[8]} />
+                  <Image alt="image" width={1920} height={1080} className="w-1/2 h-auto object-contain rounded-xl my-4 drop-shadow-md" src={trafficImages[9]} />
                 </div>
               )}
             {props.tag == "traffic" &&
               props.h3Idx == 2 &&
               props.h4Idx == 0 &&
               idx == 2 && (
-                <div className={classes.trafficMapImg}>
+                <div className="flex flex-col gap-4 w-full">
                   <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={trafficImages[10]} />
                   <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={trafficImages[11]} />
                 </div>
@@ -259,8 +258,8 @@ const MainSec = ({ section }) =>
 const TextSection = IntroOutroSec;
 const PList = DetailedParagraphs;
 const H4Contents = (props) => (
-  <li className={classes.h4Section}>
-    <h4>
+  <li className="flex flex-col gap-2 my-2">
+    <h4 className="text-lg font-semibold text-slate-800">
       {props.h4Link ? (
         <a href={props.h4Link} target="_blank" rel="noopener noreferrer">
           {props.h4}
@@ -276,16 +275,16 @@ const H4Contents = (props) => (
       <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={historyImages[props.h4Idx]} alt="history" />
     )}
     {props.tag == "traffic" && props.h3Idx == 0 && props.h4Idx == 0 && (
-      <div className={classes.jobHotelImg}>
+      <div className="flex flex-row gap-4 items-center w-full">
         {trafficImages.slice(0, 2).map((d, i) => (
-          <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={d} key={i} alt="traffic" />
+          <Image alt="image" width={1920} height={1080} className="w-1/2 h-auto object-contain rounded-xl my-4 drop-shadow-md" src={d} key={i} alt="traffic" />
         ))}
       </div>
     )}
     {props.tag == "traffic" && props.h3Idx == 0 && props.h4Idx == 1 && (
-      <div className={classes.jobHotelImg}>
+      <div className="flex flex-row gap-4 items-center w-full">
         {trafficImages.slice(2, 4).map((d, i) => (
-          <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={d} key={i} alt="traffic" />
+          <Image alt="image" width={1920} height={1080} className="w-1/2 h-auto object-contain rounded-xl my-4 drop-shadow-md" src={d} key={i} alt="traffic" />
         ))}
       </div>
     )}
@@ -294,16 +293,16 @@ const H4Contents = (props) => (
       props.h4Idx != 1 &&
       props.h4Idx != 0 && <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={trafficImages[props.h4Idx + 2]} alt="traffic" />}
     {props.tag == "job" && props.h3Idx == 2 && props.h4Idx == 0 && (
-      <div className={classes.jobSchoolImg}>
+      <div className="flex flex-row gap-4 items-center w-full">
         {props.jobImg.slice(0, 3).map((d, i) => (
-          <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={d} key={i} alt="job" />
+          <Image alt="image" width={1920} height={1080} className="w-1/3 h-auto object-contain rounded-xl my-4 drop-shadow-md" src={d} key={i} alt="job" />
         ))}
       </div>
     )}
     {props.tag == "job" && props.h3Idx == 2 && props.h4Idx == 1 && (
-      <div className={classes.jobHotelImg}>
+      <div className="flex flex-row gap-4 items-center w-full">
         {props.jobImg.slice(3, 5).map((d, i) => (
-          <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={d} key={i} alt="job" />
+          <Image alt="image" width={1920} height={1080} className="w-1/2 h-auto object-contain rounded-xl my-4 drop-shadow-md" src={d} key={i} alt="job" />
         ))}
       </div>
     )}
@@ -349,7 +348,7 @@ const HasH4Content = (props) => {
         <Image alt="image" width={1920} height={1080} className="w-full h-auto object-contain rounded-xl my-4 drop-shadow-md" src={weatherImages[1]} alt="weather" />
       )}
       {[...Array(lenData)].map((_, h4Idx) => (
-        <ul className={classes.h4Con} key={h4Idx}>
+        <ul className="flex flex-col gap-4 ml-4" key={h4Idx}>
           <H4Contents
             h4Idx={h4Idx}
             h3Idx={props.h3Idx}
