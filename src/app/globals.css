@@ -2,7 +2,7 @@
 
 @theme {
   --color-primary-500: #ff7e14;
-  --font-sans: "Noto Sans KR", sans-serif;
+  --font-sans: var(--font-sans), sans-serif;
 }
 
 @layer base {

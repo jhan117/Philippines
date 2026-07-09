@@ -1,6 +1,4 @@
-"use client";
-
-import { use } from "react";
+import { Metadata } from "next";
 import Link from "next/link";
 import BlogHeader from "@/components/blog/BlogHeader";
 import { ContentRenderer } from "@/components/blog/ContentSections";
@@ -8,7 +6,11 @@ import CardList from "@/components/blog/CardList";
 import { PAGE_CONFIGS } from "@/data/pageConfigs";
 import { navList } from "@/data/siteData";
 
-const SubPageNav = ({ currentPath }) => {
+interface SubpageProps {
+  params: Promise<{ slug: string[] }>;
+}
+
+const SubPageNav = ({ currentPath }: { currentPath: string }) => {
   const parentCategory = currentPath.split("/")[0];
   const navItem = navList.find((item) => item.enName === parentCategory);
 
@@ -22,17 +24,17 @@ const SubPageNav = ({ currentPath }) => {
   if (tabs.length === 0) return null;
 
   return (
-    <div className="flex flex-wrap gap-2 mb-8 pb-4 border-b border-slate-100">
+    <div className="flex flex-wrap gap-2 mb-8 pb-4 border-b border-slate-200">
       {tabs.map((tab, idx) => {
         const isActive = currentPath === tab.href.slice(1);
         return (
           <Link
             key={idx}
             href={tab.href}
-            className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
+            className={`px-5 py-2 rounded-full text-[15px] font-medium transition-colors border ${
               isActive
-                ? "bg-primary-500 text-white shadow-md shadow-primary-500/20"
-                : "bg-slate-100 text-slate-500 hover:bg-slate-200 hover:text-slate-700"
+                ? "bg-slate-800 text-white border-slate-800 shadow-sm"
+                : "bg-white text-slate-700 border-slate-300 hover:bg-slate-50 hover:text-slate-900"
             }`}
           >
             {tab.label}
@@ -43,8 +45,32 @@ const SubPageNav = ({ currentPath }) => {
   );
 };
 
-export default function Subpage({ params }) {
-  const resolvedParams = use(params);
+export async function generateMetadata({
+  params,
+}: SubpageProps): Promise<Metadata> {
+  const resolvedParams = await params;
+  const { slug } = resolvedParams;
+  let path = slug.join("/");
+
+  if (path === "environment") path = "environment/traffic";
+  if (path === "economy") path = "economy/wealth_gap";
+
+  if (path === "interview") {
+    return { title: "인터뷰 | Philippines Insight" };
+  }
+
+  const pageConfig = PAGE_CONFIGS[path];
+  if (!pageConfig)
+    return { title: "페이지를 찾을 수 없습니다 | Philippines Insight" };
+
+  return {
+    title: `${pageConfig.header} | Philippines Insight`,
+    description: `${pageConfig.header} - 대구대 파란사다리 2조가 필리핀에서 직접 느끼고 기록한 생생한 현지 이야기.`,
+  };
+}
+
+export default async function Subpage({ params }: SubpageProps) {
+  const resolvedParams = await params;
   const { slug } = resolvedParams;
   let path = slug.join("/");
 
@@ -71,7 +97,7 @@ export default function Subpage({ params }) {
   }
 
   return (
-    <div className="w-full bg-slate-50 min-h-screen py-10">
+    <div className="w-full bg-white min-h-screen py-8 md:py-16 selection:bg-slate-100 selection:text-slate-900">
       <BlogHeader header={pageConfig.header} writer={pageConfig.writer}>
         <SubPageNav currentPath={path} />
         <ContentRenderer blocks={pageConfig.blocks} />
