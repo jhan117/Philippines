@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import InterviewPage from "./InterviewPage";
 
 export const ContentRenderer = ({ blocks }) => {
@@ -47,38 +46,31 @@ export const ContentRenderer = ({ blocks }) => {
             return (
               <div
                 key={idx}
-                className={`relative flex justify-center w-full my-6 mx-auto ${block.src.includes("jobImgs") ? "md:w-2/3 lg:w-1/2" : ""}`}
+                className={`flex justify-center w-full my-6 mx-auto ${block.src.includes("jobImgs") ? "md:w-2/3 lg:w-1/2" : ""}`}
               >
-                <div className="relative w-full max-w-full h-[500px]">
-                  <Image
-                    src={block.src}
-                    alt="content image"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-contain drop-shadow-md rounded-2xl"
-                    onContextMenu={(e) => e.preventDefault()}
-                  />
-                </div>
+                <img
+                  src={block.src}
+                  alt="content image"
+                  className="w-full h-auto max-h-[75vh] object-contain drop-shadow-md rounded-2xl border border-slate-100"
+                  onContextMenu={(e) => e.preventDefault()}
+                  loading="lazy"
+                />
               </div>
             );
           case "image-grid":
             return (
               <div
                 key={idx}
-                className="flex flex-row flex-nowrap justify-center gap-2 md:gap-4 items-center w-full my-6"
+                className="flex flex-row flex-nowrap justify-center gap-2 md:gap-4 items-start w-full my-6"
               >
                 {block.images.map((img, i) => (
-                  <div
-                    key={i}
-                    className="flex-1 min-w-0 w-1/2 relative bg-slate-100 rounded-xl overflow-hidden shadow-sm flex items-center justify-center h-[400px]"
-                  >
-                    <Image
+                  <div key={i} className="flex-1 min-w-0 w-1/2">
+                    <img
                       src={img}
                       alt="content image grid item"
-                      fill
-                      sizes="(max-width: 768px) 50vw, 33vw"
-                      className="object-contain"
+                      className="w-full h-auto rounded-xl shadow-sm border border-slate-100"
                       onContextMenu={(e) => e.preventDefault()}
+                      loading="lazy"
                     />
                   </div>
                 ))}

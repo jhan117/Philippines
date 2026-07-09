@@ -53,7 +53,7 @@ const HomeSlide = () => {
   };
 
   return (
-    <div className="relative w-full overflow-hidden bg-slate-950 flex flex-col md:flex-row h-screen min-h-[500px]">
+    <div className="relative w-full overflow-hidden bg-slate-950 flex flex-col md:flex-row h-screen min-h-125">
       {/* Left Area (Typography & Scroll Down) */}
       <div className="w-full md:w-1/2 h-1/2 md:h-full flex flex-col justify-center px-8 md:px-16 lg:px-24 z-20 relative bg-slate-900 border-b md:border-b-0 md:border-r border-slate-800">
         <p className="text-primary-500 font-bold tracking-widest text-xs md:text-sm uppercase mb-4 opacity-90">

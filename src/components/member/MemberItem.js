@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const MemberItem = (props) => {
   return (
-    <div className="w-56 bg-white p-6 border border-slate-100/80 rounded-[2rem] text-center flex flex-col items-center gap-4 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-300 group">
+    <div className="w-56 bg-white p-6 border border-slate-100/80 rounded-4xl text-center flex flex-col items-center gap-4 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-300 group">
       <div className="relative">
         <Image
           className="rounded-full w-24 h-24 object-cover shadow-inner ring-4 ring-slate-50 group-hover:ring-primary-100 transition-colors duration-300"

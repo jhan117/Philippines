@@ -43,7 +43,7 @@ const Dropdown = ({
           />
         </button>
         <ul
-          className={`absolute top-full left-1/2 -translate-x-1/2 mt-4 flex-col py-2 min-w-[8rem] border border-white/10 rounded-xl bg-slate-800 shadow-2xl z-50 overflow-hidden transition-all duration-200 origin-top ${
+          className={`absolute top-full left-1/2 -translate-x-1/2 mt-4 flex-col py-2 min-w-32 border border-white/10 rounded-xl bg-slate-800 shadow-2xl z-50 overflow-hidden transition-all duration-200 origin-top ${
             isOpen
               ? "flex opacity-100 scale-y-100"
               : "hidden opacity-0 scale-y-0"
