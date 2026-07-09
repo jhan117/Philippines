@@ -6,7 +6,18 @@ import Image from "next/image";
 
 import DropdownItem from "./DropdownItem";
 import Backdrop from "../ui/Backdrop";
+
 const DROP_DOWN = "/images/icons/drop-down.svg";
+
+interface DropdownProps {
+  className?: string;
+  text: string;
+  item: { id: string; koName: string; enName: string }[];
+  href: string;
+  isOpen: boolean;
+  onToggle: () => void;
+  onClose: () => void;
+}
 
 const Dropdown = ({
   className,
@@ -16,7 +27,7 @@ const Dropdown = ({
   isOpen,
   onToggle,
   onClose,
-}) => {
+}: DropdownProps) => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -28,10 +39,12 @@ const Dropdown = ({
       {isOpen &&
         mounted &&
         createPortal(<Backdrop onClick={onClose} />, document.body)}
-      <li className={`${className} relative`}>
+      <li className={`${className || ""} relative`}>
         <button
           className="flex items-center gap-1 hover:text-primary-400 transition-colors"
           onClick={onToggle}
+          aria-haspopup="true"
+          aria-expanded={isOpen}
         >
           {text}
           <Image
@@ -48,6 +61,7 @@ const Dropdown = ({
               ? "flex opacity-100 scale-y-100"
               : "hidden opacity-0 scale-y-0"
           }`}
+          role="menu"
         >
           {item.map((i) => (
             <DropdownItem

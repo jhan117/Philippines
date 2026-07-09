@@ -1,6 +1,7 @@
 import HomeHeader from "@/components/home/HomeHeader";
 import HomeFooter from "@/components/home/HomeFooter";
 import { Noto_Sans_KR } from "next/font/google";
+import { Metadata } from "next";
 
 import "./globals.css";
 
@@ -10,7 +11,7 @@ const notoSansKr = Noto_Sans_KR({
   variable: "--font-sans",
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Philippines Insight | 대구대 파란사다리 2조",
   description:
     "역사, 문화, 경제, 환경 등 필리핀의 모든 것을 한눈에 알아보세요.",
@@ -26,7 +27,7 @@ export const metadata = {
   },
 };
 
-const RootLayout = ({ children }) => {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="ko">
       <body

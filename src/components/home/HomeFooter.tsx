@@ -31,7 +31,9 @@ const HomeFooter = () => {
                     href={item.url}
                     className="hover:text-primary-400 transition-colors"
                   >
-                    {item.koName} ({item.enName.charAt(0).toUpperCase() + item.enName.slice(1)})
+                    {item.koName} (
+                    {item.enName.charAt(0).toUpperCase() + item.enName.slice(1)}
+                    )
                   </Link>
                 </li>
               ))}

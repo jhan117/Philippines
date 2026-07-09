@@ -1,4 +1,6 @@
-const sequenceList = [
+import { Member, NavItem, Category } from "./types";
+
+const sequenceList: (string | number)[] = [
   "필리핀",
   1000,
   "필리핀 2조",
@@ -17,7 +19,7 @@ const sequenceList = [
   1000,
 ];
 
-const memberList = [
+const memberList: Member[] = [
   {
     id: "m1",
     src: "/avatars/m1.jpg",
@@ -83,7 +85,7 @@ const memberList = [
   },
 ];
 
-const envList = [
+const envList: { id: string; koName: string; enName: string }[] = [
   {
     id: "i1",
     koName: "교통",
@@ -101,7 +103,7 @@ const envList = [
   },
 ];
 
-const ecoList = [
+const ecoList: { id: string; koName: string; enName: string }[] = [
   {
     id: "e1",
     koName: "빈부격차",
@@ -114,7 +116,7 @@ const ecoList = [
   },
 ];
 
-const navList = [
+const navList: NavItem[] = [
   {
     id: "a1",
     koName: "홈",
@@ -167,7 +169,7 @@ const navList = [
   },
 ];
 
-const category = [
+const category: Category[] = [
   { id: "history", tag: "역사", name: "김한나" },
   { id: "traffic", tag: "교통", name: "김선우" },
   { id: "weather", tag: "날씨", name: "김혜민" },
@@ -176,11 +178,4 @@ const category = [
   { id: "education", tag: "교육", name: "신나연" },
 ];
 
-export {
-  sequenceList,
-  memberList,
-  navList,
-  envList,
-  ecoList,
-  category,
-};
+export { sequenceList, memberList, navList, envList, ecoList, category };

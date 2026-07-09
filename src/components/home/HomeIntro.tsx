@@ -1,5 +1,3 @@
-import { Fragment } from "react";
-
 const HomeIntro = () => {
   return (
     <section className="w-full py-20 md:py-32 px-6 bg-white text-center flex flex-col items-center justify-center border-b border-slate-100 relative -mt-4 rounded-t-4xl z-30 shadow-[0_-10px_40px_rgba(0,0,0,0.05)]">

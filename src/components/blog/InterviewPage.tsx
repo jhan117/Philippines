@@ -38,7 +38,7 @@ const InterviewPage = (props) => {
             {/* Summary Blockquote */}
             {props.data.summary && props.data.summary[idx] && (
               <blockquote className="mt-6 p-4 md:px-6 md:py-4 border-l-4 border-primary-500 bg-slate-50/50">
-                <p className="text-slate-700 font-medium leading-loose text-base">
+                <p className="text-slate-700 font-medium leading-loose text-base md:text-lg">
                   <span className="font-bold text-primary-600 block mb-1 text-sm uppercase tracking-wider">
                     Summary
                   </span>
