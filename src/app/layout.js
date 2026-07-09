@@ -1,14 +1,23 @@
 import HomeHeader from "@/components/home/HomeHeader";
 import HomeFooter from "@/components/home/HomeFooter";
+import { Noto_Sans_KR } from "next/font/google";
 
 import "./globals.css";
 
+const notoSansKr = Noto_Sans_KR({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-sans",
+});
+
 export const metadata = {
   title: "Philippines Insight | 대구대 파란사다리 2조",
-  description: "역사, 문화, 경제, 환경 등 필리핀의 모든 것을 한눈에 알아보세요.",
+  description:
+    "역사, 문화, 경제, 환경 등 필리핀의 모든 것을 한눈에 알아보세요.",
   openGraph: {
     title: "Philippines Insight | 대구대 파란사다리 2조",
-    description: "역사, 문화, 경제, 환경 등 필리핀의 모든 것을 한눈에 알아보세요.",
+    description:
+      "역사, 문화, 경제, 환경 등 필리핀의 모든 것을 한눈에 알아보세요.",
     type: "website",
     locale: "ko_KR",
   },
@@ -20,14 +29,11 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang="ko">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet" />
-      </head>
-      <body className="w-full flex flex-col min-h-screen font-sans bg-slate-50 text-slate-800 antialiased overflow-x-hidden">
+      <body
+        className={`w-full flex flex-col min-h-screen ${notoSansKr.variable} font-sans bg-slate-50 text-slate-800 antialiased overflow-x-hidden`}
+      >
         <HomeHeader />
-        <main className="flex-grow w-full max-w-[1920px] mx-auto flex flex-col items-center">
+        <main className="grow w-full max-w-[1920px] mx-auto flex flex-col items-center">
           {children}
         </main>
         <HomeFooter />

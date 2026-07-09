@@ -9,8 +9,8 @@
   body {
     @apply bg-slate-50 text-slate-900 font-sans min-h-screen flex flex-col antialiased selection:bg-primary-500 selection:text-white;
   }
-  
+
   main {
-    @apply flex-grow w-full flex flex-col items-center;
+    @apply grow w-full flex flex-col items-center;
   }
 }
