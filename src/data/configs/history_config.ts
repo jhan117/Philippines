@@ -1,4 +1,4 @@
-import { PageConfig } from "../types";
+﻿import { PageConfig } from "../types";
 
 export const history_config: PageConfig = {
   header: "필리핀의 역사",
@@ -57,7 +57,7 @@ export const history_config: PageConfig = {
           blocks: [
             {
               type: "image",
-              src: "/images/historyImgs/arch.png",
+              src: "/images/historyImgs/arch.webp",
             },
             {
               type: "paragraph",
@@ -71,7 +71,7 @@ export const history_config: PageConfig = {
           blocks: [
             {
               type: "image",
-              src: "/images/historyImgs/lang.png",
+              src: "/images/historyImgs/lang.webp",
             },
             {
               type: "paragraph",
@@ -85,7 +85,7 @@ export const history_config: PageConfig = {
           blocks: [
             {
               type: "image",
-              src: "/images/historyImgs/fest.png",
+              src: "/images/historyImgs/fest.webp",
             },
             {
               type: "paragraph",
@@ -99,7 +99,7 @@ export const history_config: PageConfig = {
           blocks: [
             {
               type: "image",
-              src: "/images/historyImgs/art.png",
+              src: "/images/historyImgs/art.webp",
             },
             {
               type: "paragraph",

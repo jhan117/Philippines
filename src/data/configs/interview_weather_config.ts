@@ -1,4 +1,4 @@
-import { PageConfig } from "../types";
+﻿import { PageConfig } from "../types";
 
 export const interview_weather_config: PageConfig = {
   header: "날씨 인터뷰",
@@ -52,7 +52,6 @@ export const interview_weather_config: PageConfig = {
           },
         ],
       ],
-      tagEng: "weather",
     },
   ],
 };

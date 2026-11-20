@@ -1,4 +1,4 @@
-import { PageConfig } from "../types";
+﻿import { PageConfig } from "../types";
 
 export const environment_water_quality_config: PageConfig = {
   header: "필리핀의 수질 상태",
@@ -16,7 +16,7 @@ export const environment_water_quality_config: PageConfig = {
       blocks: [
         {
           type: "image",
-          src: "/images/waterQualityImgs/wc1.png",
+          src: "/images/waterQualityImgs/wc1.webp",
         },
         {
           type: "paragraph",
@@ -29,7 +29,7 @@ export const environment_water_quality_config: PageConfig = {
       blocks: [
         {
           type: "image",
-          src: "/images/waterQualityImgs/wc2.png",
+          src: "/images/waterQualityImgs/wc2.webp",
         },
         {
           type: "paragraph",
@@ -42,7 +42,7 @@ export const environment_water_quality_config: PageConfig = {
       blocks: [
         {
           type: "image",
-          src: "/images/waterQualityImgs/wc3.png",
+          src: "/images/waterQualityImgs/wc3.webp",
         },
         {
           type: "paragraph",
@@ -59,7 +59,7 @@ export const environment_water_quality_config: PageConfig = {
       blocks: [
         {
           type: "image",
-          src: "/images/waterQualityImgs/wc4.png",
+          src: "/images/waterQualityImgs/wc4.webp",
         },
         {
           type: "paragraph",
@@ -73,8 +73,8 @@ export const environment_water_quality_config: PageConfig = {
     {
       type: "image-grid",
       images: [
-        "/images/waterQualityImgs/wc5.png",
-        "/images/waterQualityImgs/wc6.png",
+        "/images/waterQualityImgs/wc5.webp",
+        "/images/waterQualityImgs/wc6.webp",
       ],
     },
     {

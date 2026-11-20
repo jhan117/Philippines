@@ -1,4 +1,4 @@
-import { PageConfig } from "../types";
+﻿import { PageConfig } from "../types";
 
 export const interview_history_config: PageConfig = {
   header: "역사 인터뷰",
@@ -84,7 +84,6 @@ export const interview_history_config: PageConfig = {
         "세계 역사적 관점에서 맥락을 이해하는 것이 중요하지만, 필리핀 역사에서 부정적으로 보는 나라 중 하나는 일본입니다.",
         "식민지는 지배국과 피지배국 모두에게 영향을 미치며, 장기간 이어질수록 사회적 혼란과 도전을 야기할 수 있습니다. 그러나 이러한 과정에서 필리핀처럼 독특한 다문화적 정체성과 문화유산이 형성될 수도 있습니다.",
       ],
-      tagEng: "history",
     },
   ],
 };

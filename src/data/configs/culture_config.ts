@@ -1,4 +1,4 @@
-import { PageConfig } from "../types";
+﻿import { PageConfig } from "../types";
 
 export const culture_config: PageConfig = {
   header: "필리핀의 식문화",
@@ -14,7 +14,7 @@ export const culture_config: PageConfig = {
           blocks: [
             {
               type: "image",
-              src: "/images/cultureImgs/cs1.jpg",
+              src: "/images/cultureImgs/cs1.webp",
             },
             {
               type: "paragraph",
@@ -28,7 +28,7 @@ export const culture_config: PageConfig = {
           blocks: [
             {
               type: "image",
-              src: "/images/cultureImgs/cs2.jpg",
+              src: "/images/cultureImgs/cs2.webp",
             },
             {
               type: "paragraph",
@@ -42,7 +42,7 @@ export const culture_config: PageConfig = {
           blocks: [
             {
               type: "image",
-              src: "/images/cultureImgs/cs3.jpg",
+              src: "/images/cultureImgs/cs3.webp",
             },
             {
               type: "paragraph",
@@ -56,7 +56,7 @@ export const culture_config: PageConfig = {
           blocks: [
             {
               type: "image",
-              src: "/images/cultureImgs/cs4.jpg",
+              src: "/images/cultureImgs/cs4.webp",
             },
             {
               type: "paragraph",
@@ -70,7 +70,7 @@ export const culture_config: PageConfig = {
           blocks: [
             {
               type: "image",
-              src: "/images/cultureImgs/cs5.jpg",
+              src: "/images/cultureImgs/cs5.webp",
             },
             {
               type: "paragraph",
@@ -84,7 +84,7 @@ export const culture_config: PageConfig = {
           blocks: [
             {
               type: "image",
-              src: "/images/cultureImgs/cs6.jpg",
+              src: "/images/cultureImgs/cs6.webp",
             },
             {
               type: "paragraph",
@@ -98,7 +98,7 @@ export const culture_config: PageConfig = {
           blocks: [
             {
               type: "image",
-              src: "/images/cultureImgs/cs7.jpg",
+              src: "/images/cultureImgs/cs7.webp",
             },
             {
               type: "paragraph",
@@ -112,7 +112,7 @@ export const culture_config: PageConfig = {
           blocks: [
             {
               type: "image",
-              src: "/images/cultureImgs/cs8.jpg",
+              src: "/images/cultureImgs/cs8.webp",
             },
             {
               type: "paragraph",

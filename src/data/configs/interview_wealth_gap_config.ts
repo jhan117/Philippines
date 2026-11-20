@@ -1,4 +1,4 @@
-import { PageConfig } from "../types";
+﻿import { PageConfig } from "../types";
 
 export const interview_wealth_gap_config: PageConfig = {
   header: "빈부격차 인터뷰",
@@ -59,7 +59,6 @@ export const interview_wealth_gap_config: PageConfig = {
           },
         ],
       ],
-      tagEng: "wealth_gap",
       videoUrl: "https://www.youtube.com/embed/anRyWUarqq0?si=UTvCzSqCrqSll5iP",
     },
   ],

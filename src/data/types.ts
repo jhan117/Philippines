@@ -29,7 +29,6 @@ export interface ContentBlock {
   answers?: { text: string; italic?: boolean }[][];
   summary?: string[];
   videoUrl?: string;
-  [key: string]: any;
 }
 
 export interface PageConfig {

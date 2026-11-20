@@ -1,4 +1,4 @@
-import { PageConfig } from "../types";
+﻿import { PageConfig } from "../types";
 
 export const job_config: PageConfig = {
   header: "필리핀 구직활동 방법",
@@ -90,7 +90,7 @@ export const job_config: PageConfig = {
           blocks: [
             {
               type: "image",
-              src: "/images/jobImgs/js1.jpg",
+              src: "/images/jobImgs/js1.webp",
             },
             {
               type: "paragraph",
@@ -105,7 +105,7 @@ export const job_config: PageConfig = {
           blocks: [
             {
               type: "image",
-              src: "/images/jobImgs/js2.jpg",
+              src: "/images/jobImgs/js2.webp",
             },
             {
               type: "paragraph",
@@ -120,7 +120,7 @@ export const job_config: PageConfig = {
           blocks: [
             {
               type: "image",
-              src: "/images/jobImgs/js3.jpg",
+              src: "/images/jobImgs/js3.webp",
             },
             {
               type: "paragraph",
@@ -146,7 +146,7 @@ export const job_config: PageConfig = {
           blocks: [
             {
               type: "image",
-              src: "/images/jobImgs/js4.jpg",
+              src: "/images/jobImgs/js4.webp",
             },
             {
               type: "paragraph",
@@ -167,9 +167,9 @@ export const job_config: PageConfig = {
             {
               type: "image-grid",
               images: [
-                "/images/jobImgs/js5.jpg",
-                "/images/jobImgs/js6.jpg",
-                "/images/jobImgs/js7.jpg",
+                "/images/jobImgs/js5.webp",
+                "/images/jobImgs/js6.webp",
+                "/images/jobImgs/js7.webp",
               ],
             },
             {
@@ -184,7 +184,7 @@ export const job_config: PageConfig = {
           blocks: [
             {
               type: "image-grid",
-              images: ["/images/jobImgs/js8.jpg", "/images/jobImgs/js9.jpg"],
+              images: ["/images/jobImgs/js8.webp", "/images/jobImgs/js9.webp"],
             },
             {
               type: "paragraph",
@@ -208,7 +208,7 @@ export const job_config: PageConfig = {
           blocks: [
             {
               type: "image",
-              src: "/images/jobImgs/js10.jpg",
+              src: "/images/jobImgs/js10.webp",
             },
             {
               type: "paragraph",

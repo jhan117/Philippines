@@ -1,4 +1,4 @@
-import { PageConfig } from "../types";
+﻿import { PageConfig } from "../types";
 
 export const economy_education_config: PageConfig = {
   header: "필리핀의 교육",
@@ -18,7 +18,7 @@ export const economy_education_config: PageConfig = {
             },
             {
               type: "image",
-              src: "/images/educationImgs/es1.png",
+              src: "/images/educationImgs/es1.webp",
             },
           ],
         },
@@ -78,7 +78,7 @@ export const economy_education_config: PageConfig = {
             },
             {
               type: "image",
-              src: "/images/educationImgs/es2.jpg",
+              src: "/images/educationImgs/es2.webp",
             },
           ],
         },

@@ -1,4 +1,4 @@
-import { PageConfig } from "../types";
+﻿import { PageConfig } from "../types";
 
 export const economy_wealth_gap_config: PageConfig = {
   header: "거리의 아이들, 빈부격차의 그림자",
@@ -17,7 +17,7 @@ export const economy_wealth_gap_config: PageConfig = {
       blocks: [
         {
           type: "image",
-          src: "/images/wealthGapImgs/wk1.jpg",
+          src: "/images/wealthGapImgs/wk1.webp",
         },
         {
           type: "paragraph",
@@ -49,7 +49,7 @@ export const economy_wealth_gap_config: PageConfig = {
         },
         {
           type: "image",
-          src: "/images/wealthGapImgs/wk2.jpg",
+          src: "/images/wealthGapImgs/wk2.webp",
         },
         {
           type: "paragraph",

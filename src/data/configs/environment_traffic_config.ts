@@ -1,4 +1,4 @@
-import { PageConfig } from "../types";
+﻿import { PageConfig } from "../types";
 
 export const environment_traffic_config: PageConfig = {
   header: "필리핀의 대중교통의 이해",
@@ -22,8 +22,8 @@ export const environment_traffic_config: PageConfig = {
             {
               type: "image-grid",
               images: [
-                "/images/trafficImgs/tk1.jpg",
-                "/images/trafficImgs/tk2.jpg",
+                "/images/trafficImgs/tk1.webp",
+                "/images/trafficImgs/tk2.webp",
               ],
             },
             {
@@ -39,8 +39,8 @@ export const environment_traffic_config: PageConfig = {
             {
               type: "image-grid",
               images: [
-                "/images/trafficImgs/tk3.jpg",
-                "/images/trafficImgs/tk4.jpg",
+                "/images/trafficImgs/tk3.webp",
+                "/images/trafficImgs/tk4.webp",
               ],
             },
             {
@@ -55,7 +55,7 @@ export const environment_traffic_config: PageConfig = {
           blocks: [
             {
               type: "image",
-              src: "/images/trafficImgs/tk5.jpg",
+              src: "/images/trafficImgs/tk5.webp",
             },
             {
               type: "paragraph",
@@ -78,7 +78,7 @@ export const environment_traffic_config: PageConfig = {
           blocks: [
             {
               type: "image",
-              src: "/images/trafficImgs/tk6.jpg",
+              src: "/images/trafficImgs/tk6.webp",
             },
             {
               type: "paragraph",
@@ -92,7 +92,7 @@ export const environment_traffic_config: PageConfig = {
           blocks: [
             {
               type: "image",
-              src: "/images/trafficImgs/tk7.jpg",
+              src: "/images/trafficImgs/tk7.webp",
             },
             {
               type: "paragraph",
@@ -106,7 +106,7 @@ export const environment_traffic_config: PageConfig = {
           blocks: [
             {
               type: "image",
-              src: "/images/trafficImgs/tk8.jpg",
+              src: "/images/trafficImgs/tk8.webp",
             },
             {
               type: "paragraph",
@@ -141,8 +141,8 @@ export const environment_traffic_config: PageConfig = {
             {
               type: "image-grid",
               images: [
-                "/images/trafficImgs/tk9.png",
-                "/images/trafficImgs/tk10.png",
+                "/images/trafficImgs/tk9.webp",
+                "/images/trafficImgs/tk10.webp",
               ],
             },
             {
@@ -155,11 +155,11 @@ export const environment_traffic_config: PageConfig = {
             },
             {
               type: "image",
-              src: "/images/trafficImgs/tk11.png",
+              src: "/images/trafficImgs/tk11.webp",
             },
             {
               type: "image",
-              src: "/images/trafficImgs/tk12.png",
+              src: "/images/trafficImgs/tk12.webp",
             },
             {
               type: "paragraph",
@@ -167,7 +167,7 @@ export const environment_traffic_config: PageConfig = {
             },
             {
               type: "image",
-              src: "/images/trafficImgs/tk13.png",
+              src: "/images/trafficImgs/tk13.webp",
             },
             {
               type: "paragraph",
@@ -175,7 +175,7 @@ export const environment_traffic_config: PageConfig = {
             },
             {
               type: "image",
-              src: "/images/trafficImgs/tk14.png",
+              src: "/images/trafficImgs/tk14.webp",
             },
             {
               type: "paragraph",
@@ -193,7 +193,7 @@ export const environment_traffic_config: PageConfig = {
             },
             {
               type: "image",
-              src: "/images/trafficImgs/tk15.png",
+              src: "/images/trafficImgs/tk15.webp",
             },
             {
               type: "paragraph",
@@ -201,7 +201,7 @@ export const environment_traffic_config: PageConfig = {
             },
             {
               type: "image",
-              src: "/images/trafficImgs/tk16.png",
+              src: "/images/trafficImgs/tk16.webp",
             },
             {
               type: "paragraph",

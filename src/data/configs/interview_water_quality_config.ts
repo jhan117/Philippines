@@ -1,4 +1,4 @@
-import { PageConfig } from "../types";
+﻿import { PageConfig } from "../types";
 
 export const interview_water_quality_config: PageConfig = {
   header: "수질 인터뷰",
@@ -54,7 +54,6 @@ export const interview_water_quality_config: PageConfig = {
           },
         ],
       ],
-      tagEng: "water_quality",
     },
   ],
 };

@@ -1,4 +1,4 @@
-import { PageConfig } from "../types";
+﻿import { PageConfig } from "../types";
 
 export const interview_traffic_config: PageConfig = {
   header: "교통 인터뷰",
@@ -45,7 +45,6 @@ export const interview_traffic_config: PageConfig = {
           },
         ],
       ],
-      tagEng: "traffic",
     },
   ],
 };

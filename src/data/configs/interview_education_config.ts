@@ -1,4 +1,4 @@
-import { PageConfig } from "../types";
+﻿import { PageConfig } from "../types";
 
 export const interview_education_config: PageConfig = {
   header: "교육 인터뷰",
@@ -62,7 +62,6 @@ export const interview_education_config: PageConfig = {
           },
         ],
       ],
-      tagEng: "education",
     },
   ],
 };

@@ -1,4 +1,4 @@
-import { PageConfig } from "../types";
+﻿import { PageConfig } from "../types";
 
 export const environment_weather_config: PageConfig = {
   header: "필리핀의 날씨",
@@ -28,7 +28,7 @@ export const environment_weather_config: PageConfig = {
         },
         {
           type: "image",
-          src: "/images/weatherImgs/wk1.png",
+          src: "/images/weatherImgs/wk1.webp",
         },
         {
           type: "paragraph",
@@ -50,7 +50,7 @@ export const environment_weather_config: PageConfig = {
       blocks: [
         {
           type: "image",
-          src: "/images/weatherImgs/wk2.png",
+          src: "/images/weatherImgs/wk2.webp",
         },
         {
           type: "h4-section",

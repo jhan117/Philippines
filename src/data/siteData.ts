@@ -1,28 +1,20 @@
-import { Member, NavItem, Category } from "./types";
+﻿import { Member, NavItem, Category } from "./types";
 
-const sequenceList: (string | number)[] = [
+const sequenceList: string[] = [
   "필리핀",
-  1000,
   "필리핀 2조",
-  1000,
   "필리핀 바콜로드",
-  1000,
   "필리핀 보라카이",
-  1000,
   "PHILIPPINES",
-  1000,
   "PHILIPPINES TEAM 2",
-  1000,
   "PHILIPPINES BACOLOD",
-  1000,
   "PHILIPPINES BORACAY",
-  1000,
 ];
 
 const memberList: Member[] = [
   {
     id: "m1",
-    src: "/avatars/m1.jpg",
+    src: "/avatars/m1.webp",
     name: "신나연",
     major: "수학교육과",
     role: "조장",
@@ -31,7 +23,7 @@ const memberList: Member[] = [
   },
   {
     id: "m2",
-    src: "/avatars/m2.jpg",
+    src: "/avatars/m2.webp",
     name: "김선우",
     major: "전자전기공학부\n전기공학과",
     role: "조원",
@@ -40,7 +32,7 @@ const memberList: Member[] = [
   },
   {
     id: "m3",
-    src: "/avatars/m3.jpg",
+    src: "/avatars/m3.webp",
     name: "윤예경",
     major: "생명공학과",
     role: "조원",
@@ -49,7 +41,7 @@ const memberList: Member[] = [
   },
   {
     id: "m4",
-    src: "/avatars/m4.jpg",
+    src: "/avatars/m4.webp",
     name: "권기영",
     major: "컴퓨터공학과",
     role: "조원",
@@ -58,7 +50,7 @@ const memberList: Member[] = [
   },
   {
     id: "m5",
-    src: "/avatars/m5.jpg",
+    src: "/avatars/m5.webp",
     name: "김한나",
     major: "언어치료학과",
     role: "조원",
@@ -67,7 +59,7 @@ const memberList: Member[] = [
   },
   {
     id: "m6",
-    src: "/avatars/m6.jpg",
+    src: "/avatars/m6.webp",
     name: "김혜민",
     major: "시각디자인융합학부\n서비스마케팅디자인과",
     role: "조원",
@@ -76,7 +68,7 @@ const memberList: Member[] = [
   },
   {
     id: "m7",
-    src: "/avatars/m7.jpg",
+    src: "/avatars/m7.webp",
     name: "신창대",
     major: "체육학부\n체육학과",
     role: "조원",
@@ -97,7 +89,7 @@ const envList: { id: string; koName: string; enName: string }[] = [
     enName: "weather",
   },
   {
-    id: "last",
+    id: "i3",
     koName: "수질",
     enName: "water_quality",
   },
@@ -110,7 +102,7 @@ const ecoList: { id: string; koName: string; enName: string }[] = [
     enName: "wealth_gap",
   },
   {
-    id: "last",
+    id: "e2",
     koName: "교육",
     enName: "education",
   },
@@ -128,14 +120,14 @@ const navList: NavItem[] = [
     koName: "역사",
     enName: "history",
     url: "/history",
-    thumbnail: "/images/category/history.jpg",
+    thumbnail: "/images/category/history.webp",
   },
   {
     id: "a3",
     koName: "환경",
     enName: "environment",
     url: "/environment/traffic",
-    thumbnail: "/images/category/environment.jpg",
+    thumbnail: "/images/category/environment.webp",
     subItems: envList,
   },
   {
@@ -143,14 +135,14 @@ const navList: NavItem[] = [
     koName: "문화",
     enName: "culture",
     url: "/culture",
-    thumbnail: "/images/category/culture.jpg",
+    thumbnail: "/images/category/culture.webp",
   },
   {
     id: "a5",
     koName: "경제",
     enName: "economy",
     url: "/economy/wealth_gap",
-    thumbnail: "/images/category/economy.jpg",
+    thumbnail: "/images/category/economy.webp",
     subItems: ecoList,
   },
   {
@@ -158,14 +150,14 @@ const navList: NavItem[] = [
     koName: "인터뷰",
     enName: "interview",
     url: "/interview",
-    thumbnail: "/images/category/interview.jpg",
+    thumbnail: "/images/category/interview.webp",
   },
   {
     id: "a7",
     koName: "취업",
     enName: "job",
     url: "/job",
-    thumbnail: "/images/category/job.jpg",
+    thumbnail: "/images/category/job.webp",
   },
 ];
 
@@ -178,4 +170,4 @@ const category: Category[] = [
   { id: "education", tag: "교육", name: "신나연" },
 ];
 
-export { sequenceList, memberList, navList, envList, ecoList, category };
+export { sequenceList, memberList, navList, category };
