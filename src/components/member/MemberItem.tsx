@@ -1,7 +1,3 @@
-"use client";
-
-import Image from "next/image";
-
 interface MemberItemProps {
   src: string;
   name: string;
@@ -22,14 +18,15 @@ const MemberItem = ({
   return (
     <div className="w-56 bg-white p-6 border border-slate-100/80 rounded-4xl text-center flex flex-col items-center gap-4 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-300 group">
       <div className="relative">
-        <Image
+        <img
           className="rounded-full w-24 h-24 object-cover shadow-inner ring-4 ring-slate-50 group-hover:ring-primary-100 transition-colors duration-300"
           src={src}
-          width={100}
-          height={100}
+          width={96}
+          height={96}
           alt={name}
+          loading="lazy"
+          draggable={false}
           onContextMenu={(e) => e.preventDefault()}
-          loading="eager"
         />
       </div>
 
@@ -51,7 +48,7 @@ const MemberItem = ({
         <a
           href={`https://www.instagram.com/${instagramId}`}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           className="mt-2 flex items-center justify-center gap-1.5 w-full py-2 bg-slate-50 hover:bg-primary-50 text-slate-500 hover:text-primary-600 rounded-xl transition-colors font-semibold text-xs border border-slate-100 hover:border-primary-100"
         >
           <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">

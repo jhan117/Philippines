@@ -1,19 +1,54 @@
-"use client";
-
-import Image from "next/image";
-import { useEffect, useRef, useState, useCallback } from "react";
-import { TypeAnimation } from "react-type-animation";
+import { useEffect, useRef, useState, useCallback, TouchEvent } from "react";
 import { sequenceList } from "@/data/siteData";
 
 const imgList = Array.from(
   { length: 17 },
-  (_, i) => `/images/philippinesImgs/${i + 1}.jpg`,
+  (_, i) => `/images/philippinesImgs/${i + 1}.webp`,
 );
-const delay = 4500; // Increased delay to 4.5s for a calm fade
+const delay = 4500;
+
+const TypewriterText = ({ words }: { words: string[] }) => {
+  const [wordIdx, setWordIdx] = useState(0);
+  const [displayed, setDisplayed] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentWord = words[wordIdx];
+    const isComplete = !isDeleting && displayed === currentWord;
+    const isEmpty = isDeleting && displayed === "";
+
+    const timeout = setTimeout(
+      () => {
+        if (isComplete) {
+          setIsDeleting(true);
+        } else if (isEmpty) {
+          setIsDeleting(false);
+          setWordIdx((prev) => (prev + 1) % words.length);
+        } else {
+          setDisplayed((prev) =>
+            isDeleting
+              ? currentWord.slice(0, prev.length - 1)
+              : currentWord.slice(0, prev.length + 1),
+          );
+        }
+      },
+      isComplete ? 1200 : isDeleting ? 45 : 85,
+    );
+
+    return () => clearTimeout(timeout);
+  }, [displayed, isDeleting, wordIdx, words]);
+
+  return (
+    <span>
+      {displayed}
+      <span className="inline-block w-[2px] h-[0.9em] bg-primary-500 ml-1 align-middle animate-pulse" />
+    </span>
+  );
+};
 
 const HomeSlide = () => {
   const [index, setIndex] = useState(0);
-  const timeoutRef = useRef(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const touchStartX = useRef(0);
 
   const resetTimeout = () => {
@@ -38,35 +73,29 @@ const HomeSlide = () => {
     };
   }, [index, nextSlide]);
 
-  const handleTouchStart = (e) => {
+  const handleTouchStart = (e: TouchEvent<HTMLDivElement>) => {
     touchStartX.current = e.touches[0].clientX;
   };
 
-  const handleTouchEnd = (e) => {
+  const handleTouchEnd = (e: TouchEvent<HTMLDivElement>) => {
     const touchEndX = e.changedTouches[0].clientX;
     if (touchStartX.current - touchEndX > 50) {
-      nextSlide(); // Swipe left
+      nextSlide();
     }
     if (touchStartX.current - touchEndX < -50) {
-      prevSlide(); // Swipe right
+      prevSlide();
     }
   };
 
   return (
-    <div className="relative w-full overflow-hidden bg-slate-950 flex flex-col md:flex-row h-screen min-h-125">
+    <div className="relative w-full overflow-hidden bg-slate-950 flex flex-col md:flex-row h-[calc(100svh-65px)] min-h-[540px]">
       {/* Left Area (Typography & Scroll Down) */}
       <div className="w-full md:w-1/2 h-1/2 md:h-full flex flex-col justify-center px-8 md:px-16 lg:px-24 z-20 relative bg-slate-900 border-b md:border-b-0 md:border-r border-slate-800">
         <p className="text-primary-500 font-bold tracking-widest text-xs md:text-sm uppercase mb-4 opacity-90">
           Philippines Insight Archive
         </p>
-        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight text-white mb-6">
-          <TypeAnimation
-            sequence={sequenceList}
-            wrapper="span"
-            speed={50}
-            repeat={Infinity}
-            cursor={true}
-          />
+        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight text-white mb-6 min-h-[2.4em] flex items-center">
+          <TypewriterText words={sequenceList} />
         </h2>
         <p className="text-slate-400 text-sm md:text-base leading-relaxed font-medium max-w-sm">
           대구대학교 파란사다리 2조가 필리핀에서 직접 느끼고 기록한 생생한 현지
@@ -74,7 +103,7 @@ const HomeSlide = () => {
         </p>
 
         {/* Scroll Down Indicator */}
-        <div className="absolute bottom-8 left-8 md:left-16 flex flex-col items-center gap-2 animate-bounce opacity-70">
+        <div className="absolute bottom-6 md:bottom-8 left-8 md:left-16 flex flex-col items-center gap-2 animate-bounce opacity-70">
           <span className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">
             Scroll
           </span>
@@ -113,29 +142,29 @@ const HomeSlide = () => {
 
             return (
               <div
-                key={idx}
+                key={img}
                 className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
                   isCurrent ? "opacity-100 z-10" : "opacity-0 z-0"
                 }`}
               >
-                {/* Dark Overlay for better contrast just in case */}
                 <div className="absolute inset-0 bg-slate-950/20 z-10 pointer-events-none" />
-                <Image
-                  className="w-full h-full object-cover object-bottom"
+                <img
+                  className="w-full h-full object-cover object-bottom select-none"
                   src={img}
-                  alt="필리핀 현지 사진"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  priority={isCurrent}
+                  alt={`필리핀 현지 사진 ${idx + 1}`}
+                  loading={isCurrent ? "eager" : "lazy"}
+                  draggable={false}
                   onContextMenu={(e) => e.preventDefault()}
                 />
               </div>
             );
           })}
 
-          {/* Hover Arrow Controls */}
+          {/* Arrow Controls (always subtly visible on touch, hover on desktop) */}
           <button
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-30 p-2 md:p-3 rounded-full bg-black/30 text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-primary-500 backdrop-blur-sm border border-white/10"
+            type="button"
+            aria-label="이전 사진"
+            className="absolute left-3 md:left-4 top-1/2 -translate-y-1/2 z-30 p-2 md:p-3 rounded-full bg-black/40 text-white opacity-80 md:opacity-0 md:group-hover:opacity-100 transition-opacity hover:bg-primary-500 backdrop-blur-sm border border-white/10 cursor-pointer"
             onClick={(e) => {
               e.stopPropagation();
               prevSlide();
@@ -157,7 +186,9 @@ const HomeSlide = () => {
           </button>
 
           <button
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-30 p-2 md:p-3 rounded-full bg-black/30 text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-primary-500 backdrop-blur-sm border border-white/10"
+            type="button"
+            aria-label="다음 사진"
+            className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 z-30 p-2 md:p-3 rounded-full bg-black/40 text-white opacity-80 md:opacity-0 md:group-hover:opacity-100 transition-opacity hover:bg-primary-500 backdrop-blur-sm border border-white/10 cursor-pointer"
             onClick={(e) => {
               e.stopPropagation();
               nextSlide();

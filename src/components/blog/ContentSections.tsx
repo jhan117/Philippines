@@ -1,5 +1,3 @@
-"use client";
-
 import InterviewPage from "./InterviewPage";
 import { ContentBlock } from "@/data/types";
 
@@ -11,18 +9,11 @@ export const ContentRenderer = ({ blocks }: { blocks: ContentBlock[] }) => {
       {blocks.map((block, idx) => {
         switch (block.type) {
           case "paragraph":
-            if (typeof block.text === "string" && block.text.startsWith("- ")) {
-              return (
-                <ul
-                  key={idx}
-                  className="list-disc list-inside my-1 text-slate-700 text-[17px] md:text-lg leading-relaxed ml-2"
-                >
-                  <li>{block.text.replace(/^-\s*/, "")}</li>
-                </ul>
-              );
-            }
             return (
-              <p key={idx} className="text-slate-700 leading-relaxed">
+              <p
+                key={idx}
+                className="text-[17px] md:text-lg text-slate-700 leading-relaxed mb-2"
+              >
                 {block.text}
               </p>
             );
@@ -56,8 +47,9 @@ export const ContentRenderer = ({ blocks }: { blocks: ContentBlock[] }) => {
                 {block.src && (
                   <img
                     src={block.src}
-                    alt="content image"
+                    alt="본문 이미지"
                     className="w-full h-auto max-h-[75vh] object-contain rounded-2xl border border-slate-200 shadow-sm"
+                    draggable={false}
                     onContextMenu={(e) => e.preventDefault()}
                     loading="lazy"
                   />
@@ -68,14 +60,15 @@ export const ContentRenderer = ({ blocks }: { blocks: ContentBlock[] }) => {
             return (
               <div
                 key={idx}
-                className="flex flex-row flex-nowrap justify-center gap-2 md:gap-4 items-start w-full my-6"
+                className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 items-start w-full my-6"
               >
                 {(block.images || []).map((img, i) => (
-                  <div key={i} className="flex-1 min-w-0 w-1/2">
+                  <div key={i} className="w-full">
                     <img
                       src={img}
-                      alt="content image grid item"
+                      alt={`본문 이미지 ${i + 1}`}
                       className="w-full h-auto rounded-2xl border border-slate-200 shadow-sm"
+                      draggable={false}
                       onContextMenu={(e) => e.preventDefault()}
                       loading="lazy"
                     />
@@ -121,13 +114,13 @@ export const ContentRenderer = ({ blocks }: { blocks: ContentBlock[] }) => {
                 className="flex flex-col gap-2 text-[15px] text-slate-600 bg-slate-50 border border-slate-100 p-4 rounded-xl my-4"
               >
                 {(block.links || []).map((l, i) => (
-                  <p key={i}>
+                  <p key={i} className="leading-relaxed">
                     {l.writer && `${l.writer}, `}
                     <a
                       href={l.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="font-semibold text-primary-600 hover:underline"
+                      className="font-semibold text-primary-600! hover:underline"
                     >
                       {l.title}
                     </a>

@@ -1,10 +1,7 @@
-import Link from "next/link";
-import Image from "next/image";
-
+import { Link } from "react-router-dom";
 import { navList } from "@/data/siteData";
 
 const CategoryGrid = () => {
-  // Filter out 'home' and only keep content categories
   const categories = navList.filter((item) => item.id !== "a1");
 
   return (
@@ -22,17 +19,17 @@ const CategoryGrid = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {categories.map((cat) => (
             <Link
-              href={cat.url || `/${cat.enName}`}
+              to={cat.url || `/${cat.enName}`}
               key={cat.id}
               className="group relative h-64 md:h-80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 block"
             >
               {/* Thumbnail Image */}
-              <Image
-                src={cat.thumbnail || "/images/philippinesImgs/1.jpg"}
+              <img
+                src={cat.thumbnail || "/images/philippinesImgs/1.webp"}
                 alt={cat.koName}
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
+                draggable={false}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
 
               {/* Dark Overlay for Text Readability */}
