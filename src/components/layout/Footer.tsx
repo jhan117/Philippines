@@ -1,7 +1,7 @@
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { navList } from "@/data/siteData";
 
-const HomeFooter = () => {
+const Footer = () => {
   return (
     <footer className="w-full bg-slate-950 text-slate-400 py-16 px-8 md:px-12 flex flex-col gap-12 text-sm mt-auto border-t border-slate-900">
       <div className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
@@ -28,7 +28,7 @@ const HomeFooter = () => {
               .map((item) => (
                 <li key={item.id}>
                   <Link
-                    href={item.url}
+                    to={item.url || `/${item.enName}`}
                     className="hover:text-primary-400 transition-colors"
                   >
                     {item.koName} (
@@ -49,9 +49,10 @@ const HomeFooter = () => {
             <br />
             개발 일지가 궁금하시다면?
           </p>
-          <Link
+          <a
             href="https://github.com/jhan117/Philippines"
             target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 mt-2 px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-medium transition-colors border border-slate-700 hover:border-slate-600 w-max"
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -62,7 +63,7 @@ const HomeFooter = () => {
               />
             </svg>
             GitHub 개발 일지 보기
-          </Link>
+          </a>
         </div>
       </div>
 
@@ -73,4 +74,4 @@ const HomeFooter = () => {
   );
 };
 
-export default HomeFooter;
+export default Footer;
